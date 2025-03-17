@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+    <!--<link rel="icon" href="./../home/img/logo.png" type="image/x-icon">-->
+    <link rel="stylesheet" href="./style.css">
+    <title>Aylex Repository</title>
+  </head>
+  <body>
+    <header>
+      <h5>QUICK SQL</h5>
+      <p>Make MySQL INSET QUERY FAST!</p>
+    </header>
+    <section>
+      <div class="txts">
+        <p class="purple">INSERT INTO&nbsp;</p>
+        <input type="text" class="table" placeholder="Table_Name" onchange="updateQuery(); console.log(this.size)" oninput="this.value.length == 1 ? this.size = 1 : this.size = (this.value.length)-1">
+        <p>&nbsp;(</p>
+      </div>
+      <span class="columns">
+        <div id="colRef0">
+          <!--<button class="addColumn" onclick="addColumn()">+</button>--><input id="column0" type="text" placeholder="Column_Name" onchange="setColumnNames(0, this.value); updateQuery()" oninput="this.value.length == 1 ? this.size = 1 : this.size = (this.value.length)-1"><button class="removeColumn" onclick="alert('MySQL ERROR_NO_COLUMN_FOUND')">-</button>
+        </div>
+      </span>
+      <button class="addColumn" onclick="addColumn()">Add Column</button>
+      <p>&nbsp;)<span class="purple">VALUES</span>&nbsp;(</p>
+      <span class="values">
+        <select class="column0 orange" onchange="setColumnValues(0, this.value); updateQuery()">
+          <option value="null">null</option>
+          <option value="Random_ID">ID/s</option>
+          <option value="Random_Name">Name/s</option>
+        </select>
+      </span>
+      <p>&nbsp;);</p>
+      <div style="display: flex; flex-direction: row; align-items: center; justify-content: center">
+        <p>Count: </p>
+        <input type="number" class="valueCount" placeholder="1" onchange="setCount(this.value)" oninput="this.value.length == 1 ? this.size = 1 : this.size = (this.value.length)-1">
+      </div>
+      <button onclick="copyQuery()" id="cButton">Copy Query</button>
+      <!--
+      <p>SELECT WHAT VALUES TO INCLUDE</p>
+      <div>
+        <table>
+          <td>ID</td>
+          <td><input type="checkbox" id="id" onchange="setOptionValue(this.id, 1)" style="position: relative;top: 1.5px;"></td>
+          <!-- <td><select>
+            <option value="int">int</option>
+            <option values="varchar">varchar</option>
+          </select></td> -->
+          <!--
+          <td><input type="text" list="idType" placeholder="DATA TYPE" id="idDType" style="height: 12px;width: 73px;"></td>
+          <datalist type="text" id="idType">
+            <option value="int">INT</option>
+            <option value="varchar">VARCHAR</option>
+          </datalist>
+        </table>
+        <table>
+          <td>NAME</td>
+          <td><input type="checkbox" id="name" onchange="setOptionValue(this.id, 2)" style="position: relative;top: 1.5px;"></td>
+          <td>LAST NAME</td>
+          <td><input type="checkbox" id="lastName" onchange="setOptionValue(this.id, 3)" style="position: relative;top: 1.5px;"></td>
+          <td><input type="text" id="nameCount" placeholder="COUNT" autocomplete="off" spellcheck="off" style="height: 12px;width: 50px;"></td>
+        </table>
+        <table>
+          <td>Location</td>
+          <td><input type="checkbox" id="location" onchange="setOptionValue(this.id, 4)" style="position: relative;top: 1.5px;"></td>
+        </table>
+      </div>
+    </section>
+    <section id="columnArrange">
+      <p>ARRANGE COLUMN</p>
+      <table id="t1">
+        <td>Column 1:</td>
+        <td><select id="arrColumn"></select></td>
+      </table>
+      <table id="t2">
+        <td>Column 2:</td>
+        <td><select id="arrColumn"></select></td>
+      </table>
+      <table id="t3">
+        <td>Column 3:</td>
+        <td><select id="arrColumn"></select></td>
+      </table>
+      <table id="t4">
+        <td>Column 4:</td>
+        <td><select id="arrColumn"></select></td>
+      </table>
+    </table>
+    -->
+    <p id="forCopy"></p>
+    <div class="errorMessage">Error</div>
+  </body>
+  <script type="text/javascript" src="./function.js"></script>
+  <script type="text/javascript" src="./addRemoveFunction.js"></script>
+</html>
