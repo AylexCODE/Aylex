@@ -166,7 +166,7 @@ function copyQuery() {
     textArea.remove();
 }
 
-const randomNames = ["John", "Brian"];
+const randomNames = ["John", "Elijah", "Brian"];
 
 function upgradeQuery(){
   let finalQuery = forCopy.innerHTML, tempQuery = "", nth2 = false; finalQuery = finalQuery.slice(0, finalQuery.indexOf(" VALUES (") + 9);
