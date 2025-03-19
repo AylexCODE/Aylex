@@ -4,6 +4,7 @@ const values = document.querySelector(".values");
 const forCopy = document.getElementById("forCopy");
 const errorMsg = document.querySelector(".errorMessage");
 const columnRefO = document.getElementById("colRef0");
+const valueCount = document.querySelector(".valueCount");
 
 let columnNames = ["undefined"];
 let columnValues = ["null"];
@@ -144,7 +145,13 @@ function updateQuery(){
 updateQuery();
 
 function copyQuery() {
-    if(table.value == "" || columnNames.includes("undefined")){
+    if(table.value == "" || columnNames.includes("undefined") || valueCount.value > 100){
+      if(valueCount > 100) {
+        errorMsg.innerHTML = "Error: Too many value count!";
+      }else{
+        errorMsg.innerHTML = "Error: Column name cannot be null";
+      }
+      
       return errorMsg.classList.add("show");
     }else{
       errorMsg.classList.remove("show");
