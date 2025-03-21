@@ -174,6 +174,7 @@ function copyQuery() {
 }
 
 const randomNames = ["John", "Elijah", "Brian"];
+const randomLastNames = ["Doe"];
 
 function upgradeQuery(){
   let finalQuery = forCopy.innerHTML, tempQuery = "", nth2 = false; finalQuery = finalQuery.slice(0, finalQuery.indexOf(" VALUES (") + 9);
