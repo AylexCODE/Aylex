@@ -3,9 +3,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import PageNotFound from './pages/Error/pageNotFound';
-import Signup from './pages/Signup/index';
-import Login from './pages/Login/index';
 import Home from './pages/Home/index';
+import ClashofClans from './pages/ClashofClans/index';
+import Minecraft from './pages/Minecraft/index';
 
 function App(){
     return (
@@ -13,8 +13,8 @@ function App(){
       <Routes>
         <Route path="*" element={<PageNotFound className="background" /> } />
         <Route path="/" element={<Home className="background" />} />
-        <Route path="/Clash-of-Clans" element={<Login className="background" />} />
-        <Route path="/Minecraft" element={<Signup className="background" />} />
+        <Route path="/Clash-of-Clans" element={<ClashofClans className="background" />} />
+        <Route path="/Minecraft" element={<Minecraft className="background" />} />
       </Routes>
     </BrowserRouter>
     );
