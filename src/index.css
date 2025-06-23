@@ -12,4 +12,8 @@
 
 body {
     background-color: var(--background);
+    height: 100dvh;
+    width: 100dvw;
+    display: grid;
+    place-items: center;
 }

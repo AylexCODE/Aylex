@@ -2,6 +2,8 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import {} from "./features/color/colours.css";
+
 import PageNotFound from './pages/Error/pageNotFound';
 import Home from './pages/Home/index';
 import ClashofClans from './pages/ClashofClans/index';
