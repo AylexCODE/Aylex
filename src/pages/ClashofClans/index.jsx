@@ -13,7 +13,7 @@ function ClashofClans(){
         <main>
         {isLoading === false ? (
             <>
-            <p>Hello World</p>
+            <p>Hello World!</p>
             </>
         ) : (
             <LoadingScreen />

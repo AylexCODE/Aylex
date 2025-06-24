@@ -1,6 +1,6 @@
 // import {} from './features/themes/theme.css';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import {} from "./features/color/colours.css";
 
@@ -11,14 +11,14 @@ import Minecraft from './pages/Minecraft/index';
 
 function App(){
     return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="*" element={<PageNotFound className="background" /> } />
         <Route path="/" element={<Home className="background" />} />
         <Route path="/Clash-of-Clans" element={<ClashofClans className="background" />} />
         <Route path="/Minecraft" element={<Minecraft className="background" />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
     );
 }
 
