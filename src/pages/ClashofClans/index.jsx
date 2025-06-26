@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import LoadingScreen from '../../components/Loader/LoadingScreen';
+import ClassicWar from './components/ClassicWar';
 
 function ClashofClans(){
     const [isLoading, setIsLoading] = useState(true);
@@ -13,7 +14,7 @@ function ClashofClans(){
         <main>
         {isLoading === false ? (
             <>
-            <p>Hello World!</p>
+            <ClassicWar />
             </>
         ) : (
             <LoadingScreen />
