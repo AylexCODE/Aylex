@@ -23,9 +23,9 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "postcss tailwind.css -o src/styles.css && gh-pages -d build",
+    "deploy": "postcss ./src/index.css -o ./src/tailwind.css && gh-pages -d build",
     "build": "react-scripts build",
-    "tailwind": "postcss tailwind.css -o src/styles.css",
+    "tailwind": "postcss ./src/index.css -o ./src/tailwind.css --watch",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

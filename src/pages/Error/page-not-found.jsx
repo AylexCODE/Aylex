@@ -1,5 +1,3 @@
-import './pageNotFound.css';
-
 import { useNavigate } from 'react-router-dom';
 
 function ErrorPage(){
@@ -10,8 +8,8 @@ function ErrorPage(){
     }, 5000);
 
     return (
-        <main className="pageNotFoundError">
-            <p><span className="errorText">404</span>Error Page Not Found!</p>
+        <main className="h-dvh w-dvw grid place-items-center text-base">
+            <p><span className="text-2xl">404</span>Error Page Not Found!</p>
         </main>
     );
 }

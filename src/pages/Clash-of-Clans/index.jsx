@@ -11,7 +11,7 @@ function ClashofClans(){
     }, 250);
 
     return (
-        <main>
+        <main className="h-dvh w-dvw grid place-items-center">
         {isLoading === false ? (
             <>
             <ClassicWar />

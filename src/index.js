@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {} from './index.css';
-import "./styles.css";
+import "./tailwind.css";
 import App from './App.jsx';
 import reportWebVitals from './reportWebVitals.js';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';

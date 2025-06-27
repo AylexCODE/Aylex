@@ -10,7 +10,7 @@ function Minecraft(){
     }, 2000);
 
     return (
-        <main>
+        <main className="h-dvh w-dvh grid place-items-center">
         {isLoading === false ? (
             <>
             <p>Hello World</p>

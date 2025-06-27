@@ -1,7 +1,7 @@
 function Home(){
     return (
-        <main>
-            <p className="text-3xl font-bold underline">Hello World!</p>
+        <main className="h-dvh w-dvw grid place-items-center">
+            <p>Hello World!</p>
         </main>
     );
 }
