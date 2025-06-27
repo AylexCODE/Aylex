@@ -15,8 +15,8 @@ function App(){
       <Routes>
         <Route path="*" element={<PageNotFound className="background" /> } />
         <Route path="/" element={<Home className="background" />} />
-        <Route path="/Clash-of-Clans" element={<ClashofClans className="background" />} />
-        <Route path="/Minecraft" element={<Minecraft className="background" />} />
+        <Route path="/clash-of-clans" element={<ClashofClans className="background" />} />
+        <Route path="/minecraft" element={<Minecraft className="background" />} />
       </Routes>
     </HashRouter>
     );
