@@ -6,7 +6,7 @@ import {} from "./features/color/colours.css";
 
 import PageNotFound from './pages/Error/pageNotFound';
 import Home from './pages/Home/index';
-import ClashofClans from './pages/ClashofClans/index';
+import ClashofClans from './pages/Clash-of-Clans/index';
 import Minecraft from './pages/Minecraft/index';
 
 function App(){
