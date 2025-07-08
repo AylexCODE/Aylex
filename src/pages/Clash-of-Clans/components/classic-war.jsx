@@ -46,13 +46,13 @@ function ClassicWar(){
     return (
         <>
         {getWarData.isFetching && (
-            <div key={"ss"}>Getting war data...</div>
+            <p>Getting war data...</p>
         )}
         {getWarData.isError && (
-            <div key={"asadads"}>An error occured while getting war data. {getWarData.error}</div>
+            <p>An error occured while getting war data. {getWarData.error}</p>
         )}
         {getWarData.data && Object.entries(getWarData.data).length > 0 && Object.entries(getWarData.data).map((war) => (
-            <div key={war[0]}>{war[1].startTime}</div>
+            <p key={war[0]}>{war[1].startTime}</p>
         ))}
         </>
     );
