@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@theme {
+    --color-bgEven: #192841;
+    --color-bgOdd: #162238;
+    --color-iconTextColor: #abe9cd;
+    --color-textColor: #FFF;
+    --color-navBg: rgba(255, 255, 255, 0.1);
+    --color-navShadowColor: rgba(255, 255, 255, 0.2);
+}
