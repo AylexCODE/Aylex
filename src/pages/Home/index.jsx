@@ -24,6 +24,7 @@ function Home(){
                     <span className="h-[200px] w-[200px] flex flex-col rounded-sm border border-white p-[5px]">
                         <p>Online Karaoke</p>
                         <a href="https://github.com/AylexCODE/Karaoke" className="underline">Source Code</a>
+                        <a href="jkaraoke.42web.io" className="underline">Demo</a>
                     </span>
                     <span className="h-[200px] w-[200px] flex flex-col rounded-sm border border-white p-[5px]">
                         <p>Discord BOT</p>
