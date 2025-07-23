@@ -2,6 +2,7 @@
 
 @theme {
     --color-bgColor: #F8F8F3;
+    --color-bgColorClear: #FEFFFE;
     --color-iconTextColor: #abe9cd;
     --color-textColor: #000;
     --color-navBg: rgba(255, 255, 255, 0.1);

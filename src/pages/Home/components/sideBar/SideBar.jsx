@@ -2,7 +2,7 @@ export default function SideBar(){
     return (
         <>
         <div className="flex flex-col gap-[1.25rem] p-[1.25rem]">
-            <img src="%PUBLIC_URL%/../../../favicon.svg" alt="logo" className="w-[6rem] h-[6rem] rounded-full bg-black"></img>
+            <img src="%PUBLIC_URL%/../favicon.svg" alt="logo" className="w-[6rem] h-[6rem] rounded-full bg-bgColorClear"></img>
             <div className="flex flex-col gap-[0.25rem] text-textColor">
                 <h1 className="text-lg font-bold text-ellipsis text-nowrap whitespace-nowrap overflow-x-hidden">Alexander I. Jala</h1>
                 <p className="text-sm text-ellipsis text-nowrap whitespace-nowrap overflow-x-hidden">Trainee Developer</p>
@@ -11,7 +11,7 @@ export default function SideBar(){
         <ul className="flex flex-col [&>li]:flex [&>li]:flex-row [&>li]:px-[1.25rem] [&>li]:py-[0.75rem] [&>li]:items-center [&>li]:gap-[0.65rem]">
             <li>
                 <svg height="16px" width="16px" viewBox="0 0 24 24">
-                    <path dill="#000000" fill-opacity="0.0" stroke="#000000" stroke-width="2.0" stroke-opacity="1.0" stroke-miterlimit="10" d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linecap="round"></path>
+                    <path fill="#000000" fill-opacity="0.0" stroke="#000000" stroke-width="2.0" stroke-opacity="1.0" stroke-miterlimit="10" d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linecap="round"></path>
                 </svg>Home
             </li>
             <li>
@@ -26,7 +26,7 @@ export default function SideBar(){
                 </svg>Projects
             </li>
         </ul>
-        <div className="flex justify-between mt-auto mx-[1rem] mb-[1rem] rounded-lg p-[0.75rem] bg-[#FEFFFE]">
+        <div className="flex justify-between mt-auto mx-[1rem] mb-[1rem] rounded-lg p-[0.75rem] bg-bgColorClear">
             <p>Testing</p>
             <input type="checkbox" />
         </div>
