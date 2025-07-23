@@ -32,7 +32,7 @@ export default function SideBar(props){
         </div>
         <div className="flex flex-col gap-[0.15rem] pt-[0px] pb-[1.25rem] px-[1.25rem] opacity-60 [&>small]:text-xs">
             <small className="text-ellipsis text-nowrap whitespace-nowrap overflow-x-hidden">Built With ReactJS & Tailwind CSS</small>
-            <small className="text-ellipsis text-nowrap whitespace-nowrap overflos-x-hidden">&#169; 2025 AylexCODE, All Rights Reserved.</small>
+            <small className="text-ellipsis text-nowrap whitespace-nowrap overflow-x-hidden">&#169; 2025 AylexCODE, All Rights Reserved.</small>
         </div>
         </>
     )
