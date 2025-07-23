@@ -6,5 +6,5 @@
     --color-iconTextColor: #abe9cd;
     --color-textColor: #FFF;
     --color-navBg: rgba(255, 255, 255, 0.1);
-    --color-navShadowColor: rgba(255, 255, 255, 0.2);
+    --color-navShadowColor: rgba(0, 0, 0, 0.05);
 }

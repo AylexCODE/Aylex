@@ -7,6 +7,8 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-500: oklch(63.7% 0.237 25.331);
+    --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-base: 1rem;
@@ -18,6 +20,8 @@
     --font-weight-bold: 700;
     --radius-sm: 0.25rem;
     --blur-xs: 4px;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --color-bgEven: #192841;
@@ -25,7 +29,7 @@
     --color-iconTextColor: #abe9cd;
     --color-textColor: #FFF;
     --color-navBg: rgba(255, 255, 255, 0.1);
-    --color-navShadowColor: rgba(255, 255, 255, 0.2);
+    --color-navShadowColor: rgba(0, 0, 0, 0.05);
   }
 }
 @layer base {
@@ -177,8 +181,23 @@
   .fixed {
     position: fixed;
   }
+  .relative {
+    position: relative;
+  }
   .top-0 {
     top: calc(var(--spacing) * 0);
+  }
+  .top-\[0\.65rem\] {
+    top: 0.65rem;
+  }
+  .bottom-\[0\.65rem\] {
+    bottom: 0.65rem;
+  }
+  .box-content {
+    box-sizing: content-box;
+  }
+  .block {
+    display: block;
   }
   .flex {
     display: flex;
@@ -186,14 +205,32 @@
   .grid {
     display: grid;
   }
+  .hidden {
+    display: none;
+  }
   .h-95 {
     height: calc(var(--spacing) * 95);
+  }
+  .h-\[0\.2rem\] {
+    height: 0.2rem;
+  }
+  .h-\[1\.5rem\] {
+    height: 1.5rem;
+  }
+  .h-\[2\.2rem\] {
+    height: 2.2rem;
+  }
+  .h-\[4rem\] {
+    height: 4rem;
   }
   .h-\[40px\] {
     height: 40px;
   }
   .h-\[90\%\] {
     height: 90%;
+  }
+  .h-\[100dvh\] {
+    height: 100dvh;
   }
   .h-\[200px\] {
     height: 200px;
@@ -207,8 +244,26 @@
   .w-90 {
     width: calc(var(--spacing) * 90);
   }
+  .w-\[1\.5rem\] {
+    width: 1.5rem;
+  }
+  .w-\[1\.8rem\] {
+    width: 1.8rem;
+  }
+  .w-\[2\.2rem\] {
+    width: 2.2rem;
+  }
+  .w-\[2rem\] {
+    width: 2rem;
+  }
   .w-\[90\%\] {
     width: 90%;
+  }
+  .w-\[100\%\] {
+    width: 100%;
+  }
+  .w-\[100dvw\] {
+    width: 100dvw;
   }
   .w-\[200px\] {
     width: 200px;
@@ -222,6 +277,30 @@
   .w-full {
     width: 100%;
   }
+  .scale-0 {
+    --tw-scale-x: 0%;
+    --tw-scale-y: 0%;
+    --tw-scale-z: 0%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .scale-50 {
+    --tw-scale-x: 50%;
+    --tw-scale-y: 50%;
+    --tw-scale-z: 50%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .scale-75 {
+    --tw-scale-x: 75%;
+    --tw-scale-y: 75%;
+    --tw-scale-z: 75%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .rotate-45 {
+    rotate: 45deg;
+  }
+  .rotate-135 {
+    rotate: 135deg;
+  }
   .flex-col {
     flex-direction: column;
   }
@@ -234,6 +313,9 @@
   .items-center {
     align-items: center;
   }
+  .items-end {
+    align-items: flex-end;
+  }
   .justify-between {
     justify-content: space-between;
   }
@@ -245,6 +327,9 @@
   }
   .overflow-hidden {
     overflow: hidden;
+  }
+  .rounded-full {
+    border-radius: calc(infinity * 1px);
   }
   .rounded-sm {
     border-radius: var(--radius-sm);
@@ -268,14 +353,26 @@
   .bg-bgOdd {
     background-color: var(--color-bgOdd);
   }
+  .bg-black {
+    background-color: var(--color-black);
+  }
   .bg-navBg {
     background-color: var(--color-navBg);
+  }
+  .bg-red-500 {
+    background-color: var(--color-red-500);
+  }
+  .bg-transparent {
+    background-color: transparent;
   }
   .p-\[5px\] {
     padding: 5px;
   }
   .p-\[10px\] {
     padding: 10px;
+  }
+  .px-\[1rem\] {
+    padding-inline: 1rem;
   }
   .px-\[5px\] {
     padding-inline: 5px;
@@ -312,8 +409,12 @@
     --tw-shadow: 0px 1px 10px 0px var(--tw-shadow-color, currentcolor);
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
+  .shadow-\[var\(--color-navShadowColor\)_0px_2px_8px\] {
+    --tw-shadow: var(--tw-shadow-color, var(--color-navShadowColor)) 0px 2px 8px;
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
   .shadow-navShadowColor {
-    --tw-shadow-color: rgba(255, 255, 255, 0.2);
+    --tw-shadow-color: rgba(0, 0, 0, 0.05);
     @supports (color: color-mix(in lab, red, red)) {
       --tw-shadow-color: color-mix(in oklab, var(--color-navShadowColor) var(--tw-shadow-alpha), transparent);
     }
@@ -323,10 +424,30 @@
     -webkit-backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
     backdrop-filter: var(--tw-backdrop-blur,) var(--tw-backdrop-brightness,) var(--tw-backdrop-contrast,) var(--tw-backdrop-grayscale,) var(--tw-backdrop-hue-rotate,) var(--tw-backdrop-invert,) var(--tw-backdrop-opacity,) var(--tw-backdrop-saturate,) var(--tw-backdrop-sepia,);
   }
+  .transition {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
   .select-none {
     -webkit-user-select: none;
     user-select: none;
   }
+}
+@property --tw-scale-x {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-y {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
+}
+@property --tw-scale-z {
+  syntax: "*";
+  inherits: false;
+  initial-value: 1;
 }
 @property --tw-border-style {
   syntax: "*";
@@ -441,6 +562,9 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      --tw-scale-z: 1;
       --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-shadow: 0 0 #0000;

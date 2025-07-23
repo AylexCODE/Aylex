@@ -1,0 +1,28 @@
+.line1, .line2, .line3 {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+    stroke-dasharray: 60 100;
+}
+
+.line2 {
+    stroke-dasharray: 60 60;
+}
+
+.line3 {
+    stroke-dasharray: 55 100;
+}
+
+.activeMenu > .line1 {
+    stroke-dashoffset: -71;
+}
+
+.activeMenu > .line2 {
+    stroke-dasharray: 0 60;
+    stroke-dashoffset: -29.5;
+}
+
+.activeMenu > .line3 {
+    stroke-dashoffset: -56;
+}
