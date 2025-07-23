@@ -1,3 +1,39 @@
 export default function SideBar(){
-    
+    return (
+        <>
+        <div className="flex flex-col gap-[1.25rem] p-[1.25rem]">
+            <img src="%PUBLIC_URL%/../../../favicon.svg" alt="logo" className="w-[6rem] h-[6rem] rounded-full bg-black"></img>
+            <div className="flex flex-col gap-[0.25rem] text-textColor">
+                <h1 className="text-lg font-bold text-ellipsis text-nowrap whitespace-nowrap overflow-x-hidden">Alexander I. Jala</h1>
+                <p className="text-sm text-ellipsis text-nowrap whitespace-nowrap overflow-x-hidden">Trainee Developer</p>
+            </div>
+        </div>
+        <ul className="flex flex-col [&>li]:flex [&>li]:flex-row [&>li]:px-[1.25rem] [&>li]:py-[0.75rem] [&>li]:items-center [&>li]:gap-[0.65rem]">
+            <li>
+                <svg height="16px" width="16px" viewBox="0 0 24 24">
+                    <path dill="#000000" fill-opacity="0.0" stroke="#000000" stroke-width="2.0" stroke-opacity="1.0" stroke-miterlimit="10" d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linecap="round"></path>
+                </svg>Home
+            </li>
+            <li>
+                <svg height="16px" width="16px" viewBox="0 0 24 24">
+                    <circle fill="#000000" fill-opacity="0.0" stroke="#000000" stroke-width="2.0" stroke-opacity="1.0" stroke-miterlimit="10" cx="12" cy="8" r="5" stroke-linecap="round"></circle>
+                    <path dill="#000000" fill-opacity="0.0" stroke="#000000" stroke-width="2.0" stroke-opacity="1.0" stroke-miterlimit="10" d="M20 21a8 8 0 0 0-16 0" stroke-linecap="round"></path>
+                </svg>About
+            </li>
+            <li>
+                <svg height="16px" width="16px" viewBox="0 0 24 24">
+                    <path fill="#000000" fill-opacity="0.0" stroke="#000000" stroke-width="2.0" stroke-opacity="1.0" stroke-miterlimit="10" d="M1.82,18.07C1.82,9.87,1.81,9.2,1.82,5.01C1.83,3.27,3.05,2.84,3.69,2.84C6.41,2.81,4.7,2.81,8.76,2.84C10.56,2.85,10.49,5.96,12.24,5.96C16.59,5.97,16.12,5.97,19.68,5.96C21.84,5.96,21.95,7.61,21.95,8.08C21.93,11.54,21.95,12.99,21.95,18.07C21.95,18.19,21.89,19.78,20.18,19.78C15.88,19.78,12.32,19.78,3.74,19.78C3.5,19.78,1.82,19.78,1.82,18.07Z" stroke-linecap="round"/>
+                </svg>Projects
+            </li>
+        </ul>
+        <div className="flex justify-between mt-auto mx-[1rem] mb-[1rem] rounded-lg p-[0.75rem] bg-[#FEFFFE]">
+            <p>Testing</p>
+            <input type="checkbox" />
+        </div>
+        <div className="flex flex-col gap-[0.15rem] pt-[0px] pb-[1.25rem] px-[1.25rem] opacity-60 [&>small]:text-xs">
+            <small className="text-ellipsis text-nowrap whitespace-nowrap overflow-x-hidden">Built With ReactJS & Tailwind CSS</small>
+            <small className="text-ellipsis text-nowrap whitespace-nowrap overflos-x-hidden">&#169; 2025 AylexCODE, All Rights Reserved.</small>
+        </div>
+        </>
+    )
 }

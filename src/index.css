@@ -3,7 +3,7 @@
 @theme {
     --color-bgColor: #F8F8F3;
     --color-iconTextColor: #abe9cd;
-    --color-textColor: #FFF;
+    --color-textColor: #000;
     --color-navBg: rgba(255, 255, 255, 0.1);
     --color-navShadowColor: rgba(0, 0, 0, 0.05);
     --color-sideBarCover: rgba(0, 0, 0, 0.4);
