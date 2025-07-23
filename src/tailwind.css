@@ -26,6 +26,7 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --font-textFont: "Space Grotesk", "Poppins", sans-serif;
     --color-bgColor: #F8F8F3;
     --color-bgColorClear: #FEFFFE;
     --color-textColor: #000;
@@ -312,9 +313,6 @@
   .bg-\[\#E8E8E0\] {
     background-color: #E8E8E0;
   }
-  .bg-\[\#FEFFFE\] {
-    background-color: #FEFFFE;
-  }
   .bg-bgColor {
     background-color: var(--color-bgColor);
   }
@@ -341,6 +339,9 @@
   }
   .pb-\[1\.25rem\] {
     padding-bottom: 1.25rem;
+  }
+  .font-textFont {
+    font-family: var(--font-textFont);
   }
   .text-2xl {
     font-size: var(--text-2xl);

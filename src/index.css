@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+    --font-textFont: "Space Grotesk", "Poppins", sans-serif;
     --color-bgColor: #F8F8F3;
     --color-bgColorClear: #FEFFFE;
     --color-iconTextColor: #abe9cd;

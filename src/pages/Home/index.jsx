@@ -7,7 +7,7 @@ function Home(){
     const [navState, setNavState] = useState(false);
     
     return (
-        <main className="h-dvh w-dvw select-none text-textColor text-base overflow-scroll bg-bgColor">
+        <main className="h-dvh w-dvw font-textFont select-none text-textColor text-base overflow-scroll bg-bgColor">
             <header className="h-[4rem] w-dvw sticky top-0 px-[1rem] shadow-[var(--color-navShadowColor)_0px_2px_8px] flex flex-row justify-between items-center z-10">
                 <img src="%PUBLIC_URL%/../favicon.svg" alt="logo" className="overflow-hidden rounded-full h-[2.2rem] w-[2.2rem]"></img>
                 <button className="w-[2rem] h-[1.5rem]" onClick={() => { navState === false ? setNavState(true) : setNavState(false) }}>
