@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Aylex/static/css/main.4d58c720.css",
-    "main.js": "/Aylex/static/js/main.3b9f2093.js",
+    "main.css": "/Aylex/static/css/main.cf9b9beb.css",
+    "main.js": "/Aylex/static/js/main.81d62d79.js",
     "static/js/453.bd0ce02d.chunk.js": "/Aylex/static/js/453.bd0ce02d.chunk.js",
     "index.html": "/Aylex/index.html",
-    "main.4d58c720.css.map": "/Aylex/static/css/main.4d58c720.css.map",
-    "main.3b9f2093.js.map": "/Aylex/static/js/main.3b9f2093.js.map",
+    "main.cf9b9beb.css.map": "/Aylex/static/css/main.cf9b9beb.css.map",
+    "main.81d62d79.js.map": "/Aylex/static/js/main.81d62d79.js.map",
     "453.bd0ce02d.chunk.js.map": "/Aylex/static/js/453.bd0ce02d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4d58c720.css",
-    "static/js/main.3b9f2093.js"
+    "static/css/main.cf9b9beb.css",
+    "static/js/main.81d62d79.js"
   ]
 }
