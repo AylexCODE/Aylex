@@ -32,6 +32,7 @@
     --color-textColor: #000;
     --color-navShadowColor: rgba(0, 0, 0, 0.05);
     --color-sideBarCover: rgba(0, 0, 0, 0.4);
+    --color-sideTextColorActive: #4884CA;
   }
 }
 @layer base {
@@ -371,6 +372,12 @@
   }
   .whitespace-nowrap {
     white-space: nowrap;
+  }
+  .text-\[\#4884CA\] {
+    color: #4884CA;
+  }
+  .text-sideTextColorActive {
+    color: var(--color-sideTextColorActive);
   }
   .text-textColor {
     color: var(--color-textColor);
