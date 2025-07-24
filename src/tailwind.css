@@ -339,6 +339,9 @@
   .p-\[1\.25rem\] {
     padding: 1.25rem;
   }
+  .p-\[1rem\] {
+    padding: 1rem;
+  }
   .px-\[1\.25rem\] {
     padding-inline: 1.25rem;
   }
@@ -472,6 +475,21 @@
   .has-\[\&\>text-sideTextColorActive\]\:bg-bgColorClear {
     &:has(*>text-sideTextColorActive) {
       background-color: var(--color-bgColorClear);
+    }
+  }
+  .max-md\:hidden {
+    @media (width < 48rem) {
+      display: none;
+    }
+  }
+  .sm\:hidden {
+    @media (width >= 40rem) {
+      display: none;
+    }
+  }
+  .md\:hidden {
+    @media (width >= 48rem) {
+      display: none;
     }
   }
   .\[\&\]\:flex {

@@ -1,5 +1,10 @@
 export default function Main(){
     return (
-        <p>Main</p>
+        <>
+        <div className="p-[1rem]">
+            <div>Main</div>
+            <div>Page</div>
+        </div>
+        </>
     )
 }
