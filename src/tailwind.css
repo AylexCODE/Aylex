@@ -20,6 +20,7 @@
     --text-2xl--line-height: calc(2 / 1.5);
     --font-weight-bold: 700;
     --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --default-transition-duration: 150ms;
@@ -27,12 +28,14 @@
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --font-textFont: "Space Grotesk", "Poppins", sans-serif;
-    --color-bgColor: #F8F8F3;
-    --color-bgColorClear: #FEFFFE;
+    --color-bgColor: #F2F1F6;
+    --color-componentsColor: #F8F8F3;
+    --color-componentsColorClear: #FEFFFE;
     --color-textColor: #000;
     --color-navShadowColor: rgba(0, 0, 0, 0.05);
     --color-sideBarCover: rgba(0, 0, 0, 0.4);
     --color-sideTextColorActive: #4884CA;
+    --color-borderColor: #E6E6E6;
   }
 }
 @layer base {
@@ -208,6 +211,9 @@
   .mx-\[1rem\] {
     margin-inline: 1rem;
   }
+  .mt-\[100\%\] {
+    margin-top: 100%;
+  }
   .mt-auto {
     margin-top: auto;
   }
@@ -235,6 +241,9 @@
   .h-\[6rem\] {
     height: 6rem;
   }
+  .h-\[100\%\] {
+    height: 100%;
+  }
   .h-\[100dvh\] {
     height: 100dvh;
   }
@@ -253,8 +262,14 @@
   .w-\[6rem\] {
     width: 6rem;
   }
+  .w-\[18\%\] {
+    width: 18%;
+  }
   .w-\[70\%\] {
     width: 70%;
+  }
+  .w-\[100\%\] {
+    width: 100%;
   }
   .w-\[100dvw\] {
     width: 100dvw;
@@ -304,9 +319,19 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
+  .rounded-xl {
+    border-radius: var(--radius-xl);
+  }
   .rounded-r-2xl {
     border-top-right-radius: var(--radius-2xl);
     border-bottom-right-radius: var(--radius-2xl);
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-borderColor {
+    border-color: var(--color-borderColor);
   }
   .bg-\[\#5E5452\] {
     background-color: #5E5452;
@@ -317,8 +342,11 @@
   .bg-bgColor {
     background-color: var(--color-bgColor);
   }
-  .bg-bgColorClear {
-    background-color: var(--color-bgColorClear);
+  .bg-componentsColor {
+    background-color: var(--color-componentsColor);
+  }
+  .bg-componentsColorClear {
+    background-color: var(--color-componentsColorClear);
   }
   .bg-sideBarCover {
     background-color: var(--color-sideBarCover);
@@ -343,6 +371,9 @@
   }
   .pt-\[0px\] {
     padding-top: 0px;
+  }
+  .pr-0 {
+    padding-right: calc(var(--spacing) * 0);
   }
   .pb-\[1\.25rem\] {
     padding-bottom: 1.25rem;
@@ -412,13 +443,13 @@
     -webkit-user-select: none;
     user-select: none;
   }
-  .in-\[\.bg-bgColorClear\]\:stroke-sideTextColorActive {
-    :where(*:is(.bg-bgColorClear)) & {
+  .in-\[\.bg-componentsColorClear\]\:stroke-sideTextColorActive {
+    :where(*:is(.bg-componentsColorClear)) & {
       stroke: var(--color-sideTextColorActive);
     }
   }
-  .in-\[\.bg-bgColorClear\]\:text-sideTextColorActive {
-    :where(*:is(.bg-bgColorClear)) & {
+  .in-\[\.bg-componentsColorClear\]\:text-sideTextColorActive {
+    :where(*:is(.bg-componentsColorClear)) & {
       color: var(--color-sideTextColorActive);
     }
   }
@@ -427,9 +458,41 @@
       display: none;
     }
   }
+  .max-md\:w-\[82\%\] {
+    @media (width < 48rem) {
+      width: 82%;
+    }
+  }
+  .max-md\:border-none {
+    @media (width < 48rem) {
+      --tw-border-style: none;
+      border-style: none;
+    }
+  }
+  .md\:flex {
+    @media (width >= 48rem) {
+      display: flex;
+    }
+  }
   .md\:hidden {
     @media (width >= 48rem) {
       display: none;
+    }
+  }
+  .md\:w-\[82\%\] {
+    @media (width >= 48rem) {
+      width: 82%;
+    }
+  }
+  .md\:flex-row {
+    @media (width >= 48rem) {
+      flex-direction: row;
+    }
+  }
+  .md\:border-none {
+    @media (width >= 48rem) {
+      --tw-border-style: none;
+      border-style: none;
     }
   }
   .\[\&\>li\>a\]\:flex {
@@ -468,6 +531,11 @@
       line-height: var(--tw-leading, var(--text-xs--line-height));
     }
   }
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
 @property --tw-font-weight {
   syntax: "*";
@@ -549,6 +617,7 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;

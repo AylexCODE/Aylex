@@ -2,8 +2,6 @@
 
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
-import {} from "./features/color/colours.css";
-
 import PageNotFound from './pages/Error/page-not-found';
 
 import Home from './pages/Home/index';
