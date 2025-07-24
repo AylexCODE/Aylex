@@ -7,7 +7,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-500: oklch(63.7% 0.237 25.331);
     --spacing: 0.25rem;
     --text-xs: 0.75rem;
     --text-xs--line-height: calc(1 / 0.75);
@@ -266,9 +265,6 @@
   .w-dvw {
     width: 100dvw;
   }
-  .w-full {
-    width: 100%;
-  }
   .flex-col {
     flex-direction: column;
   }
@@ -323,9 +319,6 @@
   }
   .bg-bgColorClear {
     background-color: var(--color-bgColorClear);
-  }
-  .bg-red-500 {
-    background-color: var(--color-red-500);
   }
   .bg-sideBarCover {
     background-color: var(--color-sideBarCover);
@@ -386,9 +379,6 @@
   .whitespace-nowrap {
     white-space: nowrap;
   }
-  .text-sideTextColorActive {
-    color: var(--color-sideTextColorActive);
-  }
   .text-textColor {
     color: var(--color-textColor);
   }
@@ -422,41 +412,6 @@
     -webkit-user-select: none;
     user-select: none;
   }
-  .group-\[\.active\]\:hidden {
-    &:is(:where(.group):is(.active) *) {
-      display: none;
-    }
-  }
-  .group-\[\.active\]\:stroke-none {
-    &:is(:where(.group):is(.active) *) {
-      stroke: none;
-    }
-  }
-  .group-\[\.active\]\:stroke-red-500 {
-    &:is(:where(.group):is(.active) *) {
-      stroke: var(--color-red-500);
-    }
-  }
-  .group-\[\.active\]\:stroke-sideTextColorActive {
-    &:is(:where(.group):is(.active) *) {
-      stroke: var(--color-sideTextColorActive);
-    }
-  }
-  .group-\[\.active\]\:text-sideTextColorActive {
-    &:is(:where(.group):is(.active) *) {
-      color: var(--color-sideTextColorActive);
-    }
-  }
-  .in-\[\.active\]\:stroke-sideTextColorActive {
-    :where(*:is(.active)) & {
-      stroke: var(--color-sideTextColorActive);
-    }
-  }
-  .in-\[\.active\]\:text-sideTextColorActive {
-    :where(*:is(.active)) & {
-      color: var(--color-sideTextColorActive);
-    }
-  }
   .in-\[\.bg-bgColorClear\]\:stroke-sideTextColorActive {
     :where(*:is(.bg-bgColorClear)) & {
       stroke: var(--color-sideTextColorActive);
@@ -467,82 +422,14 @@
       color: var(--color-sideTextColorActive);
     }
   }
-  .has-\[text-sideTextColorActive\]\:bg-bgColorClear {
-    &:has(*:is(text-sideTextColorActive)) {
-      background-color: var(--color-bgColorClear);
-    }
-  }
-  .has-\[\&\>text-sideTextColorActive\]\:bg-bgColorClear {
-    &:has(*>text-sideTextColorActive) {
-      background-color: var(--color-bgColorClear);
-    }
-  }
   .max-md\:hidden {
     @media (width < 48rem) {
-      display: none;
-    }
-  }
-  .sm\:hidden {
-    @media (width >= 40rem) {
       display: none;
     }
   }
   .md\:hidden {
     @media (width >= 48rem) {
       display: none;
-    }
-  }
-  .\[\&\]\:flex {
-    display: flex;
-  }
-  .\[\&\>li\]\:flex {
-    &>li {
-      display: flex;
-    }
-  }
-  .\[\&\>li\]\:flex-row {
-    &>li {
-      flex-direction: row;
-    }
-  }
-  .\[\&\>li\]\:items-center {
-    &>li {
-      align-items: center;
-    }
-  }
-  .\[\&\>li\]\:gap-\[0\.65rem\] {
-    &>li {
-      gap: 0.65rem;
-    }
-  }
-  .\[\&\>li\]\:px-\[1\.25rem\] {
-    &>li {
-      padding-inline: 1.25rem;
-    }
-  }
-  .\[\&\>li\]\:py-\[0\.75rem\] {
-    &>li {
-      padding-block: 0.75rem;
-    }
-  }
-  .\[\&\>li\>\]\:flex {
-    &>li> {
-      display: flex;
-    }
-  }
-  .\[\&\>li\>\]\:px-\[1\.25rem\] {
-    &>li> {
-      padding-inline: 1.25rem;
-    }
-  }
-  .\[\&\>li\>NavLink\]\:flex {
-    &>li>NavLink {
-      display: flex;
-    }
-  }
-  .\[\&\>li\>NavLink\]\:flex-row {
-    &>li>NavLink {
-      flex-direction: row;
     }
   }
   .\[\&\>li\>a\]\:flex {
