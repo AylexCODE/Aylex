@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export default function SideBar(props){
     return (
-        <div className="h-[100%] w-[100%] flex flex-col bg-componentsColor border border-borderColor rounded-xl max-md:border-none">
+        <div className={"h-[100%] w-[100%] flex flex-col bg-componentsColor border border-borderColor rounded-xl" +(props.bp <= 640 ? " border-none" : "")}>
             <div className="flex flex-col gap-[1.25rem] p-[1.25rem]">
                 <img src="%PUBLIC_URL%/../favicon.svg" alt="logo" className="w-[6rem] h-[6rem] rounded-full bg-bgColorClear"></img>
                     <div className="flex flex-col gap-[0.25rem] text-textColor">
