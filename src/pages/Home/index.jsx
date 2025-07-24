@@ -2,13 +2,12 @@ import React, { useState } from 'react';
 
 import BurgerMenu from "./components/menu/BurgerMenu";
 import SideBar from "./components/sideBar/SideBar";
+import { Outlet } from 'react-router-dom';
 
 function Home(){
     const [navState, setNavState] = useState(false);
-    const [currentPage, setCurrentPage] = useState(1);
 
-    function pageHandler(page){
-        setCurrentPage(page);
+    function pageHandler(){
         setNavState(false);
     }
     
@@ -21,11 +20,13 @@ function Home(){
                 </button>
             </header>
             <div className={"w-[70%] h-dvh flex flex-col fixed top-0 left-0 bg-bgColor rounded-r-2xl z-20 transition-all duration-300 " +(navState ? "opacity-100" : "opacity-0")}>
-                <SideBar activePage={currentPage} setPage={pageHandler} />
+                <SideBar setPage={pageHandler} />
             </div>
             <div onClick={() => setNavState(!navState)} className={"fixed top-0 w-dvw h-dvh z-15 bg-sideBarCover transition-all duration-300 ease-in-out " +(navState ? "left-0" : "left-[-100dvw]")}></div>
             <aside></aside>
-            <section className="h-[100dvh] w-[100dvw]">{currentPage}</section>
+            <section className="h-[100dvh] w-[100dvw]">
+                <Outlet />
+            </section>
         </main>
     );
 }

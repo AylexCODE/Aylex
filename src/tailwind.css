@@ -330,6 +330,9 @@
   .bg-sideBarCover {
     background-color: var(--color-sideBarCover);
   }
+  .stroke-textColor {
+    stroke: var(--color-textColor);
+  }
   .p-\[0\.75rem\] {
     padding: 0.75rem;
   }
@@ -416,6 +419,64 @@
     -webkit-user-select: none;
     user-select: none;
   }
+  .group-\[\.active\]\:hidden {
+    &:is(:where(.group):is(.active) *) {
+      display: none;
+    }
+  }
+  .group-\[\.active\]\:stroke-none {
+    &:is(:where(.group):is(.active) *) {
+      stroke: none;
+    }
+  }
+  .group-\[\.active\]\:stroke-red-500 {
+    &:is(:where(.group):is(.active) *) {
+      stroke: var(--color-red-500);
+    }
+  }
+  .group-\[\.active\]\:stroke-sideTextColorActive {
+    &:is(:where(.group):is(.active) *) {
+      stroke: var(--color-sideTextColorActive);
+    }
+  }
+  .group-\[\.active\]\:text-sideTextColorActive {
+    &:is(:where(.group):is(.active) *) {
+      color: var(--color-sideTextColorActive);
+    }
+  }
+  .in-\[\.active\]\:stroke-sideTextColorActive {
+    :where(*:is(.active)) & {
+      stroke: var(--color-sideTextColorActive);
+    }
+  }
+  .in-\[\.active\]\:text-sideTextColorActive {
+    :where(*:is(.active)) & {
+      color: var(--color-sideTextColorActive);
+    }
+  }
+  .in-\[\.bg-bgColorClear\]\:stroke-sideTextColorActive {
+    :where(*:is(.bg-bgColorClear)) & {
+      stroke: var(--color-sideTextColorActive);
+    }
+  }
+  .in-\[\.bg-bgColorClear\]\:text-sideTextColorActive {
+    :where(*:is(.bg-bgColorClear)) & {
+      color: var(--color-sideTextColorActive);
+    }
+  }
+  .has-\[text-sideTextColorActive\]\:bg-bgColorClear {
+    &:has(*:is(text-sideTextColorActive)) {
+      background-color: var(--color-bgColorClear);
+    }
+  }
+  .has-\[\&\>text-sideTextColorActive\]\:bg-bgColorClear {
+    &:has(*>text-sideTextColorActive) {
+      background-color: var(--color-bgColorClear);
+    }
+  }
+  .\[\&\]\:flex {
+    display: flex;
+  }
   .\[\&\>li\]\:flex {
     &>li {
       display: flex;
@@ -443,6 +504,56 @@
   }
   .\[\&\>li\]\:py-\[0\.75rem\] {
     &>li {
+      padding-block: 0.75rem;
+    }
+  }
+  .\[\&\>li\>\]\:flex {
+    &>li> {
+      display: flex;
+    }
+  }
+  .\[\&\>li\>\]\:px-\[1\.25rem\] {
+    &>li> {
+      padding-inline: 1.25rem;
+    }
+  }
+  .\[\&\>li\>NavLink\]\:flex {
+    &>li>NavLink {
+      display: flex;
+    }
+  }
+  .\[\&\>li\>NavLink\]\:flex-row {
+    &>li>NavLink {
+      flex-direction: row;
+    }
+  }
+  .\[\&\>li\>a\]\:flex {
+    &>li>a {
+      display: flex;
+    }
+  }
+  .\[\&\>li\>a\]\:flex-row {
+    &>li>a {
+      flex-direction: row;
+    }
+  }
+  .\[\&\>li\>a\]\:items-center {
+    &>li>a {
+      align-items: center;
+    }
+  }
+  .\[\&\>li\>a\]\:gap-\[0\.65rem\] {
+    &>li>a {
+      gap: 0.65rem;
+    }
+  }
+  .\[\&\>li\>a\]\:px-\[1\.25rem\] {
+    &>li>a {
+      padding-inline: 1.25rem;
+    }
+  }
+  .\[\&\>li\>a\]\:py-\[0\.75rem\] {
+    &>li>a {
       padding-block: 0.75rem;
     }
   }

@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export default function SideBar(props){
     return (
         <>
@@ -8,22 +10,31 @@ export default function SideBar(props){
                 <p className="text-sm text-ellipsis text-nowrap whitespace-nowrap overflow-x-hidden">Trainee Developer</p>
             </div>
         </div>
-        <ul className="flex flex-col [&>li]:flex [&>li]:flex-row [&>li]:px-[1.25rem] [&>li]:py-[0.75rem] [&>li]:items-center [&>li]:gap-[0.65rem]">
-            <li onClick={() => props.setPage(1)} className={props.activePage === 1 ? "bg-bgColorClear text-sideTextColorActive" : "bg-bgColor text-textColor"}>
-                <svg height="16px" width="16px" viewBox="0 0 24 24">
-                    <path fill="#000000" fill-opacity="0.0" stroke={props.activePage === 1 ? "var(--color-sideTextColorActive)" : "var(--color-textColor)"} stroke-width="2.0" stroke-opacity="1.0" stroke-miterlimit="10" d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-linecap="round"></path>
-                </svg>Home
+        <ul className="flex flex-col [&>li>a]:flex [&>li>a]:flex-row [&>li>a]:px-[1.25rem] [&>li>a]:py-[0.75rem] [&>li>a]:items-center [&>li>a]:gap-[0.65rem]">
+            <li onClick={() => props.setPage()}>
+                <NavLink to="/" replace className={({isActive}) => isActive ? "bg-bgColorClear" : "bg-bgColor"}>
+                    <svg height="16px" width="16px" viewBox="0 0 24 24" className="stroke-textColor in-[.bg-bgColorClear]:stroke-sideTextColorActive" fill="none" strokeWidth="2.0" strokeOpacity="1" strokeMiterLimit="10" strokeLinecap="round">
+                        <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                    </svg>
+                    <p className="text-textColor in-[.bg-bgColorClear]:text-sideTextColorActive">Home</p>
+                </NavLink>
             </li>
-            <li onClick={() => props.setPage(2)} className={props.activePage === 2 ? "bg-bgColorClear text-sideTextColorActive" : "bg-bgColor text-textColor"}>
-                <svg height="16px" width="16px" viewBox="0 0 24 24">
-                    <circle fill="#000000" fill-opacity="0.0" stroke={props.activePage === 2 ? "var(--color-sideTextColorActive)" : "var(--color-textColor)"} stroke-width="2.0" stroke-opacity="1.0" stroke-miterlimit="10" cx="12" cy="8" r="5" stroke-linecap="round"></circle>
-                    <path dill="#000000" fill-opacity="0.0" stroke={props.activePage === 2 ? "var(--color-sideTextColorActive)" : "var(--color-textColor)"} stroke-width="2.0" stroke-opacity="1.0" stroke-miterlimit="10" d="M20 21a8 8 0 0 0-16 0" stroke-linecap="round"></path>
-                </svg>About
+            <li onClick={() => props.setPage()}>
+                <NavLink to="/about" replace className={({isActive}) => isActive ? "bg-bgColorClear" : "bg-bgColor"}>
+                    <svg height="16px" width="16px" viewBox="0 0 24 24" className="stroke-textColor in-[.bg-bgColorClear]:stroke-sideTextColorActive" fill="none" strokeWidth="2.0" strokeOpacity="1" strokeMiterLimit="10" strokeLinecap="round">
+                        <circle cx="12" cy="8" r="5" />
+                        <path d="M20 21a8 8 0 0 0-16 0" />
+                    </svg>
+                    <p className="text-textColor in-[.bg-bgColorClear]:text-sideTextColorActive">About</p>
+                </NavLink>
             </li>
-            <li onClick={() => props.setPage(3)} className={props.activePage === 3 ? "bg-bgColorClear text-sideTextColorActive" : "bg-bgColor text-textColor"}>
-                <svg height="16px" width="16px" viewBox="0 0 24 24">
-                    <path fill="#000000" fill-opacity="0.0" stroke={props.activePage === 3 ? "var(--color-sideTextColorActive)" : "var(--color-textColor)"} stroke-width="2.0" stroke-opacity="1.0" stroke-miterlimit="10" d="M1.82,18.07C1.82,9.87,1.81,9.2,1.82,5.01C1.83,3.27,3.05,2.84,3.69,2.84C6.41,2.81,4.7,2.81,8.76,2.84C10.56,2.85,10.49,5.96,12.24,5.96C16.59,5.97,16.12,5.97,19.68,5.96C21.84,5.96,21.95,7.61,21.95,8.08C21.93,11.54,21.95,12.99,21.95,18.07C21.95,18.19,21.89,19.78,20.18,19.78C15.88,19.78,12.32,19.78,3.74,19.78C3.5,19.78,1.82,19.78,1.82,18.07Z" stroke-linecap="round"/>
-                </svg>Projects
+            <li onClick={() => props.setPage()}>
+                <NavLink to="/projects" replace className={({isActive}) => isActive ? "bg-bgColorClear" : "bg-color"}>
+                    <svg height="16px" width="16px" viewBox="0 0 24 24" className="stroke-textColor in-[.bg-bgColorClear]:stroke-sideTextColorActive" fill="none" strokeWidth="2.0" strokeOpacity="1" strokeMiterLimit="10" strokeLinecap="round">
+                        <path d="M1.82,18.07C1.82,9.87,1.81,9.2,1.82,5.01C1.83,3.27,3.05,2.84,3.69,2.84C6.41,2.81,4.7,2.81,8.76,2.84C10.56,2.85,10.49,5.96,12.24,5.96C16.59,5.97,16.12,5.97,19.68,5.96C21.84,5.96,21.95,7.61,21.95,8.08C21.93,11.54,21.95,12.99,21.95,18.07C21.95,18.19,21.89,19.78,20.18,19.78C15.88,19.78,12.32,19.78,3.74,19.78C3.5,19.78,1.82,19.78,1.82,18.07Z" />
+                    </svg>
+                    <p className="text-textColor in-[.bg-bgColorClear]:text-sideTextColorActive">Projects</p>
+                </NavLink>
             </li>
         </ul>
         <div className="flex justify-between mt-auto mx-[1rem] mb-[1rem] rounded-lg p-[0.75rem] bg-bgColorClear">
