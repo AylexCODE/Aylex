@@ -23,10 +23,10 @@ function Home(){
                 <SideBar setPage={pageHandler} />
             </div>
             <div onClick={() => setNavState(!navState)} className={"fixed top-0 w-dvw h-dvh z-15 bg-sideBarCover transition-all duration-300 ease-in-out md:hidden " +(navState ? "left-0" : "left-[-100dvw]")}></div>
-            <aside className="max-md:hidden h-dvh w-[18%] p-[1rem] pr-0">
+            <aside className="max-md:hidden h-dvh w-[22rem] lg:w-[26rem] p-[1rem] pr-0">
                 <SideBar setPage={()=>false} />
             </aside>
-            <section className="h-dvh w-dvw md:w-[82%] p-[1rem]">
+            <section className="h-dvh w-dvw md:w-full">
                 <Outlet />
             </section>
         </main>
