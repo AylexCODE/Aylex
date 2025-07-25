@@ -13,7 +13,7 @@ export default function SideBar(props){
             <ul className="flex flex-col [&>li>a]:flex [&>li>a]:flex-row [&>li>a]:px-[1.25rem] [&>li>a]:py-[0.75rem] [&>li>a]:items-center [&>li>a]:gap-[0.65rem]">
                  <li onClick={() => props.setPage()}>
                        <NavLink to="/" replace className={({isActive}) => isActive ? "bg-componentsColorClear" : "bg-componentsColor"}>
-                        <svg height="16px" width="16px" viewBox="0 0 24 24" className="stroke-textColor in-[.bg-componentsColorClear]:stroke-sideTextColorActive" fill="none" strokeWidth="2.0" strokeOpacity="1" strokeMiterLimit="10" strokeLinecap="round">
+                        <svg height="16px" width="16px" viewBox="0 0 24 24" className="stroke-textColor in-[.bg-componentsColorClear]:stroke-sideTextColorActive" fill="none" strokeWidth="2.0" strokeOpacity="1" strokeMiterlimit="10" strokeLinecap="round">
                             <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                         </svg>
                         <p className="text-textColor in-[.bg-componentsColorClear]:text-sideTextColorActive">Home</p>
@@ -21,7 +21,7 @@ export default function SideBar(props){
                 </li>
                 <li onClick={() => props.setPage()}>
                     <NavLink to="/about" replace className={({isActive}) => isActive ? "bg-componentsColorClear" : "bg-componentsColor"}>
-                        <svg height="16px" width="16px" viewBox="0 0 24 24" className="stroke-textColor in-[.bg-componentsColorClear]:stroke-sideTextColorActive" fill="none" strokeWidth="2.0" strokeOpacity="1" strokeMiterLimit="10" strokeLinecap="round">
+                        <svg height="16px" width="16px" viewBox="0 0 24 24" className="stroke-textColor in-[.bg-componentsColorClear]:stroke-sideTextColorActive" fill="none" strokeWidth="2.0" strokeOpacity="1" strokeMiterlimit="10" strokeLinecap="round">
                             <circle cx="12" cy="8" r="5" />
                             <path d="M20 21a8 8 0 0 0-16 0" />
                         </svg>
@@ -30,7 +30,7 @@ export default function SideBar(props){
                 </li>
                 <li onClick={() => props.setPage()}>
                     <NavLink to="/projects" replace className={({isActive}) => isActive ? "bg-componentsColorClear" : "bg-componentsColor"}>
-                        <svg height="16px" width="16px" viewBox="0 0 24 24" className="stroke-textColor in-[.bg-componentsColorClear]:stroke-sideTextColorActive" fill="none" strokeWidth="2.0" strokeOpacity="1" strokeMiterLimit="10" strokeLinecap="round">
+                        <svg height="16px" width="16px" viewBox="0 0 24 24" className="stroke-textColor in-[.bg-componentsColorClear]:stroke-sideTextColorActive" fill="none" strokeWidth="2.0" strokeOpacity="1" strokeMiterlimit="10" strokeLinecap="round">
                             <path d="M1.82,18.07C1.82,9.87,1.81,9.2,1.82,5.01C1.83,3.27,3.05,2.84,3.69,2.84C6.41,2.81,4.7,2.81,8.76,2.84C10.56,2.85,10.49,5.96,12.24,5.96C16.59,5.97,16.12,5.97,19.68,5.96C21.84,5.96,21.95,7.61,21.95,8.08C21.93,11.54,21.95,12.99,21.95,18.07C21.95,18.19,21.89,19.78,20.18,19.78C15.88,19.78,12.32,19.78,3.74,19.78C3.5,19.78,1.82,19.78,1.82,18.07Z" />
                         </svg>
                         <p className="text-textColor in-[.bg-componentsColorClear]:text-sideTextColorActive">Projects</p>

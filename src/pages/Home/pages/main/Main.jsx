@@ -41,7 +41,8 @@ export default function Main(){
                         <p className="font-bold text-[1.35rem]">Tech Stack</p>
                     </span>
                     <div>
-                        <TechStack bp={breakpoint}></TechStack>
+                        <span className="h-[calc(40px+2rem)] w-[calc(100%-2rem)] absolute block inset-shadow-[10px_0px_10px_var(--color-componentsColor)] z-15"></span>
+                        <TechStack bp={breakpoint} />
                     </div>
                 </div>
             </div>
