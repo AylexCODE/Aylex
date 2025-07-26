@@ -26,7 +26,7 @@ export default function Breakpoints(cb) {
         } else if (windowSize.width <= 1280) {
             cb(1280);
         } else {
-            cb(1280);
+            cb(1440);
         }
         
         return () => window.removeEventListener('resize', handleResize);
