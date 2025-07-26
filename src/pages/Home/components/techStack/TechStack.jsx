@@ -11,7 +11,7 @@ export default function TechStack(props){
 
     useEffect(() => {
         iconsDisplay.current.offsetWidth > iconsWrapper.current.offsetWidth ? setApplyAnimate(iconsDisplay.current.offsetWidth+40) : setApplyAnimate(false);
-        iconsDisplay2.current.offsetWidth > iconsWrapper.current.offsetWidth ? setApplyAnimate2(iconsDisplay2.current.offsetWidth+40) : setApplyAnimate(false);
+        iconsDisplay2.current.offsetWidth > iconsWrapper.current.offsetWidth ? setApplyAnimate2(iconsDisplay2.current.offsetWidth+40) : setApplyAnimate2(false);
     }, [props.bp]);
 
     const icons = (<>
@@ -33,13 +33,15 @@ export default function TechStack(props){
     
     return (
         <>
-        <span ref={iconsWrapper} className="w-full py-[1rem] flex flex-row gap-[2.5rem] overflow-hidden [&>span]:flex [&>span]:flex-row [&>span]:gap-[2.5rem]">
+        <span ref={iconsWrapper} className="w-full p-[1rem] flex flex-row gap-[2.5rem] overflow-hidden [&>span]:flex [&>span]:flex-row [&>span]:gap-[2.5rem]">
             <motion.span ref={iconsDisplay} animate={{ x: applyAnimate ? -applyAnimate : 0 }} transition={{ duration: applyAnimate ? applyAnimate/30 : 0, repeat: Infinity, ease: "linear" }}>{icons}</motion.span>
             {applyAnimate ? (
                 <motion.span animate={{ x: -applyAnimate }} transition={{ duration: applyAnimate/30, repeat: Infinity, ease: "linear" }}>{icons}</motion.span>
             ) : (
                 null
             )}
+        </span>
+        <span className="w-full pb-[1rem] px-[1rem] pt-[0.5rem] flex flex-row gap-[2.5rem] overflow-hidden [&>span]:flex [&>span]:flex-row [&>span]:gap-[2.5rem]">
             <motion.span ref={iconsDisplay2} animate={{ x: applyAnimate2 ? -applyAnimate2 : 0 }} transition={{ duration: applyAnimate2 ? applyAnimate2/30 : 0, repeat: Infinity, ease: "linear" }}>{icons2}</motion.span>
             {applyAnimate2 ? (
                 <motion.span animate={{ x: -applyAnimate2 }} transition={{ duration: applyAnimate2/30, repeat: Infinity, ease: "linear" }}>{icons2}</motion.span>

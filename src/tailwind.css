@@ -273,6 +273,15 @@
   .h-\[calc\(40px\+2rem\)\] {
     height: calc(40px + 2rem);
   }
+  .h-\[calc\(80px\+2rem\)\] {
+    height: calc(80px + 2rem);
+  }
+  .h-\[calc\(80px\+3\.5rem\)\] {
+    height: calc(80px + 3.5rem);
+  }
+  .h-\[calc\(80px\+4rem\)\] {
+    height: calc(80px + 4rem);
+  }
   .h-auto {
     height: auto;
   }
@@ -357,6 +366,9 @@
   .gap-\[2\.5rem\] {
     gap: 2.5rem;
   }
+  .gap-\[5rem\] {
+    gap: 5rem;
+  }
   .overflow-hidden {
     overflow: hidden;
   }
@@ -432,14 +444,26 @@
   .py-\[1rem\] {
     padding-block: 1rem;
   }
+  .pt-\[0\.5rem\] {
+    padding-top: 0.5rem;
+  }
   .pt-\[0px\] {
     padding-top: 0px;
+  }
+  .pt-\[1rem\] {
+    padding-top: 1rem;
   }
   .pr-0 {
     padding-right: calc(var(--spacing) * 0);
   }
+  .pb-\[0\.5rem\] {
+    padding-bottom: 0.5rem;
+  }
   .pb-\[1\.25rem\] {
     padding-bottom: 1.25rem;
+  }
+  .pb-\[1rem\] {
+    padding-bottom: 1rem;
   }
   .text-center {
     text-align: center;
@@ -512,40 +536,8 @@
     --tw-shadow: var(--tw-shadow-color, var(--color-navShadowColor)) 0px 2px 8px;
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
-  .inset-shadow-\[0px_0px_10px_black\] {
-    --tw-inset-shadow: inset 0px 0px 10px var(--tw-inset-shadow-color, black);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .inset-shadow-\[10px_0px_10px_black\,_-10\] {
-    --tw-inset-shadow: inset 10px 0px 10px var(--tw-inset-shadow-color, black),inset  -10;
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .inset-shadow-\[10px_0px_10px_black\,_-10px_0\] {
-    --tw-inset-shadow: inset 10px 0px 10px var(--tw-inset-shadow-color, black),inset  -10px 0 var(--tw-inset-shadow-color, currentcolor);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .inset-shadow-\[10px_0px_10px_black\,_-10px_0px_10px_black\] {
-    --tw-inset-shadow: inset 10px 0px 10px var(--tw-inset-shadow-color, black),inset  -10px 0px 10px var(--tw-inset-shadow-color, black);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .inset-shadow-\[10px_0px_10px_black\] {
-    --tw-inset-shadow: inset 10px 0px 10px var(--tw-inset-shadow-color, black);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .inset-shadow-\[10px_0px_10px_var\(--color-componentsColor\)\,_-10px_0px_10px_black\] {
-    --tw-inset-shadow: inset 10px 0px 10px var(--tw-inset-shadow-color, var(--color-componentsColor)),inset  -10px 0px 10px var(--tw-inset-shadow-color, black);
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .inset-shadow-\[10px_0px_10px_var\(--color-componentsColor\)\,_-10px_0px_10px_var\(--color-c\)\] {
-    --tw-inset-shadow: inset 10px 0px 10px var(--tw-inset-shadow-color, var(--color-componentsColor)),inset  -10px 0px 10px var(--tw-inset-shadow-color, var(--color-c));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
   .inset-shadow-\[10px_0px_10px_var\(--color-componentsColor\)\,_-10px_0px_10px_var\(--color-componentsColor\)\] {
     --tw-inset-shadow: inset 10px 0px 10px var(--tw-inset-shadow-color, var(--color-componentsColor)),inset  -10px 0px 10px var(--tw-inset-shadow-color, var(--color-componentsColor));
-    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-  }
-  .inset-shadow-\[10px_0px_10px_var\(--color-componentsColor\)\] {
-    --tw-inset-shadow: inset 10px 0px 10px var(--tw-inset-shadow-color, var(--color-componentsColor));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .transition {
@@ -634,6 +626,16 @@
   .\[\&\>span\]\:gap-\[2\.5rem\] {
     &>span {
       gap: 2.5rem;
+    }
+  }
+  .\[\&\>span\]\:gap-\[2rem\] {
+    &>span {
+      gap: 2rem;
+    }
+  }
+  .\[\&\>span\]\:gap-\[5rem\] {
+    &>span {
+      gap: 5rem;
     }
   }
 }
