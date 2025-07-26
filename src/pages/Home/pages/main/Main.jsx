@@ -21,7 +21,7 @@ export default function Main(){
     return (
         <>
         <div className={"h-full w-full grid" +(breakpoint > 1280 ? " grid-cols-[2fr_1fr]" : " grid-cols-1")}>
-            <div className="w-full overflow-hiden">
+            <div className="w-full overflow-hidden">
                 <div className="w-[calc(100%-2rem)] h-[13rem] flex flex-col p-[1.2rem] m-[1rem] mb-[0.5rem] rounded-xl text-componentsColor bg-[#123456]">
                     <span className="flex flex-row items-start justify-start gap-[0.5rem]">
                         <span className="relative">
@@ -36,16 +36,16 @@ export default function Main(){
                 </div>
             </div>
             <div className="w-full overflow-hidden">
-                <div className="w-full opacity-50 bg-componentsColor p-[1rem]">
+                <div className="w-full bg-componentsColor p-[1rem]">
                     <span>
                         <p className="font-bold text-[1.35rem] text-nowrap">Tech Stack</p>
                     </span>
-                    <div>
-                        {/*<span className="h-[calc(80px+3.5rem)] w-auto overflow-hidden absolute block inset-shadow-[10px_0px_10px_var(--color-componentsColor),_-10px_0px_10px_var(--color-componentsColor)] z-15">
-                            <span className="invisible">
+                    <div className="w-full">
+                       {/* <span className={`hidden w-[calc(100%-${breakpoint <= 640 ? "2rem" : breakpoint > 1280 ? "30rem" : "20rem"})] h-[calc(80px+3.5rem)] absolute bg-red-500 inset-shadow-[10px_0px_10px_var(--color-componentsColor),_-10px_0px_10px_var(--color-componentsColor)] z-15`}>
+                            <span className="">
                                 <TechStack bp={breakpoint} />
                             </span>
-                        </span>*/}
+                        </span> */}
                         <TechStack bp={breakpoint} />
                     </div>
                 </div>

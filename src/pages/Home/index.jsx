@@ -30,7 +30,7 @@ function Home(){
                 <SideBar setPage={pageHandler} bp={breakpoint} />
             </div>
             <div onClick={() => setNavState(!navState)} className={"fixed top-0 w-dvw h-dvh z-15 bg-sideBarCover transition-all duration-300 ease-in-out" +(breakpoint >= 768 ? " hidden" : "") +(navState ? " left-0" : " left-[-100dvw]")}></div>
-            <aside className={(breakpoint <= 640 ? "hidden " : "") +"h-dvh w-[22rem] p-[1rem] pr-0" +(breakpoint >= 1280 ? " w-[26rem]" : "")}>
+            <aside className={(breakpoint <= 640 ? "hidden " : "") +"h-dvh p-[1rem] pr-0" +(breakpoint > 1280 ? " w-[26rem]" : " w-[22rem]")}>
                 <SideBar setPage={()=>false} bp={1024} />
             </aside>
             <section className={"h-dvh w-dvw " +(breakpoint >= 768 ? "w-full" : "")}>
