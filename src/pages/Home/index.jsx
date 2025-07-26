@@ -33,7 +33,7 @@ function Home(){
             <aside className={(breakpoint <= 640 ? "hidden " : "") +"h-dvh w-[22rem] p-[1rem] pr-0" +(breakpoint >= 1280 ? " w-[26rem]" : "")}>
                 <SideBar setPage={()=>false} bp={1024} />
             </aside>
-            <section className={"h-dvh w-dvw" +(breakpoint >= 768 ? "w-full" : "")}>
+            <section className={"h-dvh w-dvw " +(breakpoint >= 768 ? "w-full" : "")}>
                 <Outlet context={breakpoint} />
             </section>
         </main>
