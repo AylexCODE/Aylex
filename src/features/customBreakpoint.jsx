@@ -19,15 +19,16 @@ export default function Breakpoints(cb) {
         window.addEventListener('resize', handleResize);
         handleResize();
 
-        if (windowSize.width < 640) {
+        if (windowSize.width <= 640) {
             cb(640);
-        } else if (windowSize.width < 768) {
+        } else if (windowSize.width <= 768) {
             cb(768);
-        } else if (windowSize.width < 1280) {
+        } else if (windowSize.width <= 1280) {
+            cb(1280);
+        } else {
             cb(1280);
         }
-
-
+        
         return () => window.removeEventListener('resize', handleResize);
     }, [windowSize.width]);
 }

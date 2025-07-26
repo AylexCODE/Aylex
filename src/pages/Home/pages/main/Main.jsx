@@ -20,7 +20,7 @@ export default function Main(){
 
     return (
         <>
-        <div className="h-full w-full flex flex-col">
+        <div className="h-full w-full bg-green-500 flex flex-col">
             <div>
                 <div className="w-[calc(100%-2rem)] h-[13rem] flex flex-col p-[1.2rem] m-[1rem] mb-[0.5rem] rounded-xl text-componentsColor bg-[#123456]">
                     <span className="flex flex-row items-start justify-start gap-[0.5rem]">
@@ -36,15 +36,15 @@ export default function Main(){
                 </div>
             </div>
             <div>
-                <div className="bg-componentsColor p-[1rem]">
+              {/*}  <div className="bg-componentsColor p-[1rem]">
                     <span>
                         <p className="font-bold text-[1.35rem]">Tech Stack</p>
                     </span>
                     <div>
-                        <span className="h-[calc(80px+3.5rem)] w-[calc(100%-2rem)] absolute block inset-shadow-[10px_0px_10px_var(--color-componentsColor),_-10px_0px_10px_var(--color-componentsColor)] z-15"></span>
+                        <span className="h-[calc(80px+3.5rem)] w-[calc(20%-2rem)] absolute block inset-shadow-[10px_0px_10px_var(--color-componentsColor),_-10px_0px_10px_var(--color-componentsColor)] z-15"></span>
                         <TechStack bp={breakpoint} />
                     </div>
-                </div>
+                </div>*/}
             </div>
         </div>
         </>
