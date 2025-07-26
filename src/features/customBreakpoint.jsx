@@ -25,7 +25,7 @@ export default function Breakpoints(cb) {
             cb(768);
         } else if (windowSize.width <= 1280) {
             cb(1280);
-        } else {
+        } else if (windowSize.width > 1280) {
             cb(1440);
         }
         
