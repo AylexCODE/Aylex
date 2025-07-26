@@ -45,7 +45,7 @@ export default function TechStack(props){
                     <motion.span animate={{ x: -applyAnimate2 }} transition={{ duration: applyAnimate2/30, repeat: Infinity, ease: "linear" }}>{icons2}</motion.span>
                 ) : ( null )}
             </span>
-            <span className="w-full h-[calc(80px+3.5rem)] block relative bottom-[calc(80px+3.5rem)] inset-shadow-[10px_0px_10px_var(--color-componentsColor),_-10px_0px_10px_var(--color-componentsColor)] z-15"></span>
+            <span className="w-full h-[calc(80px+3.5rem)] block relative bottom-[calc(80px+3.5rem)] inset-shadow-[10px_0px_10px_var(--color-componentsColor),_-10px_0px_10px_var(--color-componentsColor)] z-5"></span>
         </div>
     )
 }
