@@ -36,7 +36,7 @@ export default function Main(){
                 </div>
             </div>
             <div className="w-full overflow-hidden">
-                <div className="w-full bg-componentsColor p-[1rem]">
+                <div className={`bg-componentsColor p-[1rem] ${breakpoint >= 768 ? "mx-[1rem] w-[calc(100%-2rem)] rounded-xl" : "w-full"}`}>
                     <span>
                         <p className="font-bold text-[1.35rem] text-nowrap">Tech Stack</p>
                     </span>
