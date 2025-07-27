@@ -35,7 +35,10 @@ export default function Main(){
                     </span>
                     <p className="mt-auto text-[1.7rem] font-black">Programming for Fun</p>
                 </div>
-                <div>
+                <div className={`bg-componentsColor p-[1rem] ${breakpoint >= 768 ? `${breakpoint >= 992 ? "my-[1rem] w-[calc(100%-1rem)]" : "mx-[1rem] w-calc(100%-2rem)]"} rounded-xl` : "w-full"}`}>
+                    <span>
+                        <p className="font-bold text-[1.35rem] text-nowrap">Overall Stats</p>
+                    </span>
                     <OverallStats bp={breakpoint} />
                 </div>
             </div>
@@ -45,11 +48,6 @@ export default function Main(){
                         <p className="font-bold text-[1.35rem] text-nowrap">Tech Stack</p>
                     </span>
                     <div className="w-full">
-                       {/* <span className={`hidden w-[calc(100%-${breakpoint <= 640 ? "2rem" : breakpoint > 1280 ? "30rem" : "20rem"})] h-[calc(80px+3.5rem)] absolute bg-red-500 inset-shadow-[10px_0px_10px_var(--color-componentsColor),_-10px_0px_10px_var(--color-componentsColor)] z-15`}>
-                            <span className="">
-                                <TechStack bp={breakpoint} />
-                            </span>
-                        </span> */}
                         <TechStack bp={breakpoint} />
                     </div>
                 </div>
