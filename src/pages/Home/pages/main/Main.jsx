@@ -21,9 +21,9 @@ export default function Main(){
 
     return (
         <>
-        <div className={"h-fit w-full grid gap-y-[1rem]" +(breakpoint >= 992 ? " grid-cols-[2fr_1fr]" : " grid-cols-1")}>
+        <div className={`h-fit w-full gap-y-[0.5rem] grid ${breakpoint >= 992 ? "grid-cols-[2fr_1fr]" : "grid-cols-1"} ${breakpoint >= 768 ? "gap-y-[1rem] [&>div>div]:border [&>div>div]:border-borderColor" : "[&>div>div]:shadow-[0px_0px_10px_var(--color-navShadowColor)] [&>div]:shadow-[0px_0px_10px_var(--color-navShadowColor)]"}`}>
             <div className="w-full overflow-hidden">
-                <div className={`w-[calc(100%-2rem)] ${breakpoint >= 992 ? "aspect-[2.5/1]" : breakpoint >= 768 ? "aspect-[1.8/1]" : "aspect-[1.35/1]"} flex flex-col p-[1.2rem] m-[1rem] mb-[0.5rem] rounded-xl text-componentsColor bg-[#123456]`}>
+                <span className={`w-[calc(100%-2rem)] ${breakpoint >= 992 ? "aspect-[2.5/1]" : breakpoint >= 768 ? "aspect-[1.8/1]" : "aspect-[1.35/1]"} flex flex-col p-[1.2rem] m-[1rem] rounded-xl text-componentsColor bg-[#123456]`}>
                     <span className="flex flex-row items-start justify-start gap-[0.5rem]">
                         <span className="relative">
                             <svg height="24px" width="24px" viewBox="0 0 24 24" stroke="var(--color-componentsColor)" fill="none" strokeWidth="1.0" strokeOpacity="1" strokeMiterlimit="10" strokeLinecap="round">
@@ -34,7 +34,7 @@ export default function Main(){
                         <p className="text-ellipsis text-nowrap whitespace-nowrap overflow-x-hidden">{dateTime}</p>
                     </span>
                     <p className="mt-auto text-[1.7rem] font-black">Programming for Fun</p>
-                </div>
+                </span>
                 <div className={`bg-componentsColor p-[1rem] ${breakpoint >= 768 ? `${breakpoint >= 992 ? "my-[1rem] w-[calc(100%-1rem)]" : "mx-[1rem] w-calc(100%-2rem)]"} rounded-xl` : "w-full"}`}>
                     <span>
                         <p className="font-bold text-[1.35rem] text-nowrap">Overall Stats</p>

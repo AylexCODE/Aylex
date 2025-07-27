@@ -7,7 +7,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-500: oklch(63.7% 0.237 25.331);
     --color-black: #000;
     --spacing: 0.25rem;
     --text-xs: 0.75rem;
@@ -242,9 +241,6 @@
   .mt-auto {
     margin-top: auto;
   }
-  .mr-\[1rem\] {
-    margin-right: 1rem;
-  }
   .mb-\[0\.5rem\] {
     margin-bottom: 0.5rem;
   }
@@ -263,35 +259,14 @@
   .hidden {
     display: none;
   }
-  .aspect-\[1\.2\/1\] {
-    aspect-ratio: 1.2/1;
-  }
-  .aspect-\[1\.3\/1\] {
-    aspect-ratio: 1.3/1;
-  }
-  .aspect-\[1\.4\/1\] {
-    aspect-ratio: 1.4/1;
-  }
   .aspect-\[1\.8\/1\] {
     aspect-ratio: 1.8/1;
-  }
-  .aspect-\[1\.9\/1\] {
-    aspect-ratio: 1.9/1;
-  }
-  .aspect-\[1\.25\/1\] {
-    aspect-ratio: 1.25/1;
   }
   .aspect-\[1\.35\/1\] {
     aspect-ratio: 1.35/1;
   }
-  .aspect-\[1\/1\] {
-    aspect-ratio: 1/1;
-  }
   .aspect-\[2\.5\/1\] {
     aspect-ratio: 2.5/1;
-  }
-  .aspect-\[2\/1\] {
-    aspect-ratio: 2/1;
   }
   .h-95 {
     height: calc(var(--spacing) * 95);
@@ -307,18 +282,6 @@
   }
   .h-\[6rem\] {
     height: 6rem;
-  }
-  .h-\[13rem\] {
-    height: 13rem;
-  }
-  .h-\[20rem\@\] {
-    height: 20rem@;
-  }
-  .h-\[20rem\] {
-    height: 20rem;
-  }
-  .h-\[25rem\] {
-    height: 25rem;
   }
   .h-\[48px\] {
     height: 48px;
@@ -337,9 +300,6 @@
   }
   .h-fit {
     height: fit-content;
-  }
-  .h-full {
-    height: 100%;
   }
   .w-90 {
     width: calc(var(--spacing) * 90);
@@ -434,6 +394,12 @@
   .gap-\[2\.5rem\] {
     gap: 2.5rem;
   }
+  .gap-y-\[0\.5\] {
+    row-gap: 0.5;
+  }
+  .gap-y-\[0\.5rem\] {
+    row-gap: 0.5rem;
+  }
   .gap-y-\[1rem\] {
     row-gap: 1rem;
   }
@@ -442,9 +408,6 @@
   }
   .overflow-x-hidden {
     overflow-x: hidden;
-  }
-  .rounded {
-    border-radius: 0.25rem;
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
@@ -490,9 +453,6 @@
   }
   .bg-componentsColorClear {
     background-color: var(--color-componentsColorClear);
-  }
-  .bg-red-500 {
-    background-color: var(--color-red-500);
   }
   .bg-sideBarCover {
     background-color: var(--color-sideBarCover);
@@ -658,34 +618,32 @@
       flex-direction: row;
     }
   }
-  .\[\&\>div\]\:gap-\[0\.5rem\] {
-    &>div {
-      gap: 0.5rem;
-    }
-  }
   .\[\&\>div\]\:gap-\[1rem\] {
     &>div {
       gap: 1rem;
     }
   }
-  .\[\&\>div\]\:rounded-xl {
+  .\[\&\>div\]\:shadow-\[0px_0px_10px_var\(--color-navShadowColor\)\] {
     &>div {
-      border-radius: var(--radius-xl);
+      --tw-shadow: 0px 0px 10px var(--tw-shadow-color, var(--color-navShadowColor));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
-  .\[\&\>div\]\:bg-bgColor {
-    &>div {
-      background-color: var(--color-bgColor);
+  .\[\&\>div\>div\]\:border {
+    &>div>div {
+      border-style: var(--tw-border-style);
+      border-width: 1px;
     }
   }
-  .\[\&\>div\>span\]\:block {
-    &>div>span {
-      display: block;
+  .\[\&\>div\>div\]\:border-borderColor {
+    &>div>div {
+      border-color: var(--color-borderColor);
     }
   }
-  .\[\&\>div\>span\]\:w-\[50px\] {
-    &>div>span {
-      width: 50px;
+  .\[\&\>div\>div\]\:shadow-\[0px_0px_10px_var\(--color-navShadowColor\)\] {
+    &>div>div {
+      --tw-shadow: 0px 0px 10px var(--tw-shadow-color, var(--color-navShadowColor));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
   .\[\&\>div\>span\]\:w-full {
@@ -708,17 +666,6 @@
       padding: 1rem;
     }
   }
-  .\[\&\>div\>span\>p\]\:font-bold {
-    &>div>span>p {
-      --tw-font-weight: var(--font-weight-bold);
-      font-weight: var(--font-weight-bold);
-    }
-  }
-  .\[\&\>div\>span\>span\]\:mb-\[0\.75rem\] {
-    &>div>span>span {
-      margin-bottom: 0.75rem;
-    }
-  }
   .\[\&\>div\>span\>span\]\:mb-\[1rem\] {
     &>div>span>span {
       margin-bottom: 1rem;
@@ -739,19 +686,9 @@
       align-items: center;
     }
   }
-  .\[\&\>div\>span\>span\]\:gap-\[0\.5rem\] {
-    &>div>span>span {
-      gap: 0.5rem;
-    }
-  }
   .\[\&\>div\>span\>span\]\:gap-\[0\.75rem\] {
     &>div>span>span {
       gap: 0.75rem;
-    }
-  }
-  .\[\&\>div\>span\>span\]\:gap-\[1rem\] {
-    &>div>span>span {
-      gap: 1rem;
     }
   }
   .\[\&\>div\>span\>span\>p\]\:text-\[1\.8rem\] {
@@ -801,19 +738,9 @@
       line-height: var(--tw-leading, var(--text-xs--line-height));
     }
   }
-  .\[\&\>span\]\:block {
-    &>span {
-      display: block;
-    }
-  }
   .\[\&\>span\]\:flex {
     &>span {
       display: flex;
-    }
-  }
-  .\[\&\>span\]\:w-full {
-    &>span {
-      width: 100%;
     }
   }
   .\[\&\>span\]\:flex-row {
@@ -821,24 +748,9 @@
       flex-direction: row;
     }
   }
-  .\[\&\>span\]\:gap-\[0\.5rem\] {
-    &>span {
-      gap: 0.5rem;
-    }
-  }
   .\[\&\>span\]\:gap-\[2\.5rem\] {
     &>span {
       gap: 2.5rem;
-    }
-  }
-  .\[\&\>span\]\:rounded-xl {
-    &>span {
-      border-radius: var(--radius-xl);
-    }
-  }
-  .\[\&\>span\]\:bg-bgColor {
-    &>span {
-      background-color: var(--color-bgColor);
     }
   }
 }
