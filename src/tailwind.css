@@ -335,6 +335,9 @@
   .h-dvh {
     height: 100dvh;
   }
+  .h-fit {
+    height: fit-content;
+  }
   .h-full {
     height: 100%;
   }
@@ -430,6 +433,9 @@
   }
   .gap-\[2\.5rem\] {
     gap: 2.5rem;
+  }
+  .gap-y-\[1rem\] {
+    row-gap: 1rem;
   }
   .overflow-hidden {
     overflow: hidden;
@@ -702,6 +708,12 @@
       padding: 1rem;
     }
   }
+  .\[\&\>div\>span\>p\]\:font-bold {
+    &>div>span>p {
+      --tw-font-weight: var(--font-weight-bold);
+      font-weight: var(--font-weight-bold);
+    }
+  }
   .\[\&\>div\>span\>span\]\:mb-\[0\.75rem\] {
     &>div>span>span {
       margin-bottom: 0.75rem;
@@ -740,6 +752,17 @@
   .\[\&\>div\>span\>span\]\:gap-\[1rem\] {
     &>div>span>span {
       gap: 1rem;
+    }
+  }
+  .\[\&\>div\>span\>span\>p\]\:text-\[1\.8rem\] {
+    &>div>span>span>p {
+      font-size: 1.8rem;
+    }
+  }
+  .\[\&\>div\>span\>span\>p\]\:font-bold {
+    &>div>span>span>p {
+      --tw-font-weight: var(--font-weight-bold);
+      font-weight: var(--font-weight-bold);
     }
   }
   .\[\&\>li\>a\]\:flex {
