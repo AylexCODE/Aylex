@@ -7,6 +7,8 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-green-500: oklch(72.3% 0.219 149.579);
+    --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-black: #000;
     --spacing: 0.25rem;
     --text-xs: 0.75rem;
@@ -19,6 +21,7 @@
     --text-lg--line-height: calc(1.75 / 1.125);
     --text-2xl: 1.5rem;
     --text-2xl--line-height: calc(2 / 1.5);
+    --font-weight-medium: 500;
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
     --font-weight-black: 900;
@@ -241,9 +244,6 @@
   .mt-auto {
     margin-top: auto;
   }
-  .mb-\[0\.5rem\] {
-    margin-bottom: 0.5rem;
-  }
   .mb-\[1rem\] {
     margin-bottom: 1rem;
   }
@@ -258,6 +258,11 @@
   }
   .hidden {
     display: none;
+  }
+  .scrollbar-hidden {
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   .aspect-\[1\.8\/1\] {
     aspect-ratio: 1.8/1;
@@ -283,6 +288,12 @@
   .h-\[6rem\] {
     height: 6rem;
   }
+  .h-\[15rem\] {
+    height: 15rem;
+  }
+  .h-\[20rem\] {
+    height: 20rem;
+  }
   .h-\[48px\] {
     height: 48px;
   }
@@ -301,6 +312,9 @@
   .h-fit {
     height: fit-content;
   }
+  .h-full {
+    height: 100%;
+  }
   .w-90 {
     width: calc(var(--spacing) * 90);
   }
@@ -316,6 +330,9 @@
   .w-\[6rem\] {
     width: 6rem;
   }
+  .w-\[20rem\] {
+    width: 20rem;
+  }
   .w-\[22rem\] {
     width: 22rem;
   }
@@ -330,6 +347,9 @@
   }
   .w-\[100\%\] {
     width: 100%;
+  }
+  .w-\[300px\] {
+    width: 300px;
   }
   .w-\[calc\(100\%-1rem\)\] {
     width: calc(100% - 1rem);
@@ -394,9 +414,6 @@
   .gap-\[2\.5rem\] {
     gap: 2.5rem;
   }
-  .gap-y-\[0\.5\] {
-    row-gap: 0.5;
-  }
   .gap-y-\[0\.5rem\] {
     row-gap: 0.5rem;
   }
@@ -406,8 +423,14 @@
   .overflow-hidden {
     overflow: hidden;
   }
+  .overflow-scroll {
+    overflow: scroll;
+  }
   .overflow-x-hidden {
     overflow-x: hidden;
+  }
+  .overflow-x-scroll {
+    overflow-x: scroll;
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
@@ -448,11 +471,17 @@
   .bg-black {
     background-color: var(--color-black);
   }
+  .bg-blue-500 {
+    background-color: var(--color-blue-500);
+  }
   .bg-componentsColor {
     background-color: var(--color-componentsColor);
   }
   .bg-componentsColorClear {
     background-color: var(--color-componentsColorClear);
+  }
+  .bg-green-500 {
+    background-color: var(--color-green-500);
   }
   .bg-sideBarCover {
     background-color: var(--color-sideBarCover);
@@ -486,6 +515,9 @@
   }
   .pt-\[0px\] {
     padding-top: 0px;
+  }
+  .pt-\[1rem\] {
+    padding-top: 1rem;
   }
   .pr-0 {
     padding-right: calc(var(--spacing) * 0);
@@ -639,16 +671,6 @@
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
-  .\[\&\>div\>div\]\:gap-y-\[0\.5rem\] {
-    &>div>div {
-      row-gap: 0.5rem;
-    }
-  }
-  .\[\&\>div\>div\]\:gap-y-\[0\.\] {
-    &>div>div {
-      row-gap: 0.;
-    }
-  }
   .\[\&\>div\>div\]\:border {
     &>div>div {
       border-style: var(--tw-border-style);
@@ -722,6 +744,42 @@
       font-weight: var(--font-weight-bold);
     }
   }
+  .\[\&\>li\]\:inline-block {
+    &>li {
+      display: inline-block;
+    }
+  }
+  .\[\&\>li\]\:h-full {
+    &>li {
+      height: 100%;
+    }
+  }
+  .\[\&\>li\]\:w-\[20rem\] {
+    &>li {
+      width: 20rem;
+    }
+  }
+  .\[\&\>li\]\:overflow-hidden {
+    &>li {
+      overflow: hidden;
+    }
+  }
+  .\[\&\>li\]\:rounded-xl {
+    &>li {
+      border-radius: var(--radius-xl);
+    }
+  }
+  .\[\&\>li\]\:border {
+    &>li {
+      border-style: var(--tw-border-style);
+      border-width: 1px;
+    }
+  }
+  .\[\&\>li\]\:border-borderColor {
+    &>li {
+      border-color: var(--color-borderColor);
+    }
+  }
   .\[\&\>li\>a\]\:flex {
     &>li>a {
       display: flex;
@@ -750,6 +808,22 @@
   .\[\&\>li\>a\]\:py-\[0\.75rem\] {
     &>li>a {
       padding-block: 0.75rem;
+    }
+  }
+  .\[\&\>li\>span\]\:block {
+    &>li>span {
+      display: block;
+    }
+  }
+  .\[\&\>li\>span\]\:p-\[0\.5rem\] {
+    &>li>span {
+      padding: 0.5rem;
+    }
+  }
+  .\[\&\>li\>span\>p\]\:font-medium {
+    &>li>span>p {
+      --tw-font-weight: var(--font-weight-medium);
+      font-weight: var(--font-weight-medium);
     }
   }
   .\[\&\>small\]\:text-xs {

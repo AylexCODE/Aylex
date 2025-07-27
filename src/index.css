@@ -13,3 +13,9 @@
     --color-sideTextColorActive: #4884CA;
     --color-borderColor: #E6E6E6;
 }
+
+@utility scrollbar-hidden {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
