@@ -613,6 +613,11 @@
       width: 100%;
     }
   }
+  .\[\&\>div\]\:flex-col {
+    &>div {
+      flex-direction: column;
+    }
+  }
   .\[\&\>div\]\:flex-row {
     &>div {
       flex-direction: row;
@@ -623,10 +628,25 @@
       gap: 1rem;
     }
   }
+  .\[\&\>div\]\:gap-y-\[0\.5rem\] {
+    &>div {
+      row-gap: 0.5rem;
+    }
+  }
   .\[\&\>div\]\:shadow-\[0px_0px_10px_var\(--color-navShadowColor\)\] {
     &>div {
       --tw-shadow: 0px 0px 10px var(--tw-shadow-color, var(--color-navShadowColor));
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+  .\[\&\>div\>div\]\:gap-y-\[0\.5rem\] {
+    &>div>div {
+      row-gap: 0.5rem;
+    }
+  }
+  .\[\&\>div\>div\]\:gap-y-\[0\.\] {
+    &>div>div {
+      row-gap: 0.;
     }
   }
   .\[\&\>div\>div\]\:border {
