@@ -1,7 +1,8 @@
 import moment from "moment/moment";
 import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
-import TechStack from "../../components/techStack/TechStack";
+import TechStack from "../../components/firstComponents/TechStack";
+import OverallStats from "../../components/firstComponents/OverallStats";
 
 export default function Main(){
     const [dateTime, setDateTime] = useState(moment(new Date()).format("ddd, MMMM Do YYYY, hh:mm:ss A"));
@@ -33,6 +34,9 @@ export default function Main(){
                         <p className="text-ellipsis text-nowrap whitespace-nowrap overflow-x-hidden">{dateTime}</p>
                     </span>
                     <p className="mt-auto text-[1.7rem] font-black">Programming for Fun</p>
+                </div>
+                <div>
+                    <OverallStats bp={breakpoint} />
                 </div>
             </div>
             <div className="w-full overflow-hidden">
