@@ -20,9 +20,9 @@ export default function Main(){
 
     return (
         <>
-        <div className={"h-full w-full grid" +(breakpoint > 1280 ? " grid-cols-[2fr_1fr]" : " grid-cols-1")}>
+        <div className={"h-full w-full grid" +(breakpoint >= 992 ? " grid-cols-[2fr_1fr]" : " grid-cols-1")}>
             <div className="w-full overflow-hidden">
-                <div className="w-[calc(100%-2rem)] h-[13rem] flex flex-col p-[1.2rem] m-[1rem] mb-[0.5rem] rounded-xl text-componentsColor bg-[#123456]">
+                <div className={`w-[calc(100%-2rem)] ${breakpoint >= 992 ? "aspect-[2.5/1]" : breakpoint >= 768 ? "aspect-[1.8/1]" : "aspect-[1.35/1]"} flex flex-col p-[1.2rem] m-[1rem] mb-[0.5rem] rounded-xl text-componentsColor bg-[#123456]`}>
                     <span className="flex flex-row items-start justify-start gap-[0.5rem]">
                         <span className="relative">
                             <svg height="24px" width="24px" viewBox="0 0 24 24" stroke="var(--color-componentsColor)" fill="none" strokeWidth="1.0" strokeOpacity="1" strokeMiterlimit="10" strokeLinecap="round">
@@ -36,7 +36,7 @@ export default function Main(){
                 </div>
             </div>
             <div className="w-full overflow-hidden">
-                <div className={`bg-componentsColor p-[1rem] ${breakpoint >= 768 ? "mx-[1rem] w-[calc(100%-2rem)] rounded-xl" : "w-full"}`}>
+                <div className={`bg-componentsColor p-[1rem] ${breakpoint >= 768 ? `${breakpoint >= 992 ? "my-[1rem] w-[calc(100%-1rem)]" : "mx-[1rem] w-[calc(100%-2rem)]"} rounded-xl` : "w-full"}`}>
                     <span>
                         <p className="font-bold text-[1.35rem] text-nowrap">Tech Stack</p>
                     </span>
