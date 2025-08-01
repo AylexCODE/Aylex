@@ -14,6 +14,8 @@ on:
 # Grant the action the permissions
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -39,8 +41,33 @@ jobs:
         env:
             REACT_APP_GITHUBGRAPHQL_TOKEN: ${{ secrets.GITHUBGRAPHQL_TOKEN }}
             
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v4
+     # - name: Deploy
+     #   uses: JamesIves/github-pages-deploy-action@releases/v4
+     #   with:
+     #       BRANCH: gh-pages
+     #       FOLDER: build
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
         with:
-            BRANCH: gh-pages
-            FOLDER: build
+          source: ./build
+          destination: ./_site
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
