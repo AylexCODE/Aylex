@@ -26,7 +26,7 @@ function Home(){
                     <BurgerMenu state={navState} />
                 </button>
             </header>
-            <div className={"w-[70%] h-dvh fixed top-0 left-0 bg-componentsColor rounded-r-2xl z-20 transition-all duration-300" +(breakpoint >= 768 ? " hidden" : "") +(navState ? " opacity-100" : " opacity-0")}>
+            <div className={"w-[70%] h-dvh fixed top-0 left-0 bg-componentsColor rounded-r-2xl z-20 transition-all duration-300" +(breakpoint >= 768 ? " hidden" : "") +(navState ? " opacity-100 pointer-events-auto" : " opacity-0 pointer-events-none")}>
                 <SideBar setPage={pageHandler} bp={breakpoint} />
             </div>
             <div onClick={() => setNavState(!navState)} className={"fixed top-0 w-dvw h-dvh z-15 bg-sideBarCover transition-all duration-300 ease-in-out" +(breakpoint >= 768 ? " hidden" : "") +(navState ? " left-0" : " left-[-100dvw]")}></div>
