@@ -39,7 +39,7 @@ jobs:
             npm install
             npm run build
         env:
-            REACT_APP_GITHUBGRAPHQL_TOKEN: ${{ secrets.GITHUBGRAPHQL_TOKEN }}
+            REACT_APP_GITHUBGRAPHQL_TOKEN: ${{ secrets.REACT_APP_GITHUBGRAPHQL_TOKEN }}
             
      # - name: Deploy
      #   uses: JamesIves/github-pages-deploy-action@releases/v4
