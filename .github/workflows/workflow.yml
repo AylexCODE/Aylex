@@ -31,7 +31,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Get Test Secret
-        run: echo ${{ REACT_APP_TESTSECRET }}
+        run: echo ${{ secrets.REACT_APP_TESTSECRET }}
 
       # Runs a set of commands using the runners shell
       - name: Build
