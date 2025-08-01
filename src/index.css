@@ -5,13 +5,16 @@
     --color-bgColor: #F2F1F6;
     --color-componentsColor: #F8F8F3;
     --color-componentsColorClear: #FEFFFE;
+    --color-componentsShadow: rgba(0, 0, 0, 0.2);
     --color-iconTextColor: #abe9cd;
     --color-textColor: #000;
     --color-navBg: rgba(255, 255, 255, 0.1);
     --color-navShadowColor: rgba(0, 0, 0, 0.05);
     --color-sideBarCover: rgba(0, 0, 0, 0.4);
     --color-sideTextColorActive: #4884CA;
-    --color-borderColor: #E6E6E6;
+    --color-borderColor: #D9D9D9;
+    --color-activeBtnColor: #ffd416;
+    --color-activeBtnShadowColor: rgba(255, 212, 22, 0.1);
 }
 
 @utility scrollbar-hidden {
