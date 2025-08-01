@@ -19,12 +19,12 @@ export default function Main(){
     }, [date]);
 
     const breakpoint = useOutletContext();
-
+    
     return (
         <>
-        <div className={`w-full scrollbar-hidden gap-y-[0.5rem] grid [&>div]:flex [&>div]:flex-col [&>div]:gap-y-[0.5rem] ${breakpoint >= 992 ? "h-full grid-cols-[2fr_1fr]" : "h-fit grid-cols-1"} ${breakpoint >= 768 ? "gap-y-[1rem] [&>div>div]:border [&>div>div]:border-borderColor [&>div]:gap-[1rem]" : "[&>div>div]:shadow-[0px_0px_10px_var(--color-navShadowColor)] [&>div]:shadow-[0px_0px_10px_var(--color-navShadowColor)]"}`}>
-            <div className={`w-full ${breakpoint <= 768 ? "overflow-hidden h-fit" : "overflow-scroll h-full"}`}>
-                <span className={`w-[calc(100%-2rem)] ${breakpoint >= 992 ? "aspect-[2.5/1]" : breakpoint >= 768 ? "aspect-[1.8/1]" : "aspect-[1.35/1]"} flex flex-col p-[1.2rem] m-[1rem] rounded-xl text-componentsColor bg-[#123456]`}>
+        <div className={`w-full scrollbar-hidden gap-y-[0.5rem] grid [&>div]:flex [&>div]:flex-col [&>div]:gap-y-[0.5rem] [&>div>div]:p-[1rem] ${breakpoint >= 992 ? "h-full grid-cols-[2fr_1fr]" : "h-fit grid-cols-1"} ${breakpoint >= 768 ? "gap-y-[1rem] [&>div]:gap-y-[1rem] [&>div>div]:border [&>div>div]:border-borderColor [&>div]:gap-[1rem]" : "[&>div>div]:shadow-[0px_0px_10px_var(--color-navShadowColor)] [&>div]:shadow-[0px_0px_10px_var(--color-navShadowColor)]"}`}>
+            <div className={`w-full ${breakpoint >= 768 ? "overflow-scroll h-full [&>div]:mx-[1rem]" : "overflow-hidden h-fit"}`}>
+                <span className={`block w-[calc(100%-2rem)] m-[1rem] mb-[0.5rem] ${breakpoint >= 992 ? "aspect-[2.5/1] mb-[0rem]" : breakpoint >= 768 ? "aspect-[1.8/1] mb-[0rem]" : "aspect-[1.35/1]"} flex flex-col p-[1.2rem] rounded-xl text-componentsColor bg-[#123456]`}>
                     <span className="flex flex-row items-start justify-start gap-[0.5rem]">
                         <span className="relative">
                             <svg height="24px" width="24px" viewBox="0 0 24 24" stroke="var(--color-componentsColor)" fill="none" strokeWidth="1.0" strokeOpacity="1" strokeMiterlimit="10" strokeLinecap="round">
@@ -36,21 +36,21 @@ export default function Main(){
                     </span>
                     <p className="mt-auto text-[1.7rem] font-black">Programming for Fun</p>
                 </span>
-                <div className={`bg-componentsColor p-[1rem] ${breakpoint >= 768 ? `${breakpoint >= 992 ? "my-[1rem] w-[calc(100%-1rem)]" : "mx-[1rem] w-[calc(100%-2rem)]"} rounded-xl` : "w-full"}`}>
+                <div className={`bg-componentsColor ${breakpoint >= 768 ? "w-[calc(100%-2rem)] rounded-xl" : "w-full"}`}>
                     <span>
                         <p className="font-bold text-[1.35rem] text-nowrap">Overall Stats</p>
                     </span>
                     <OverallStats bp={breakpoint} />
                 </div>
-                <div className={`bg-componentsColor p-[1rem] ${breakpoint >= 768 ? `${breakpoint >= 992 ? "my-[1rem] w-[calc(100%-1rem)]" : "mx-[1rem] w-[calc(100%-2rem)]"} rounded-xl` : "w-full"}`}>
+                <div className={`bg-componentsColor ${breakpoint >= 768 ? "w-[calc(100%-2rem)] rounded-xl" : "w-full"}`}>
                     <span>
                         <p className="font-bold text-[1.35rem] text-nowrap">Featured</p>
                     </span>
                     <Featured bp={breakpoint} />
                 </div>
             </div>
-            <div className={`w-full ${breakpoint <= 768 ? "overflow-hidden h-fit" : "overflow-scroll h-full"}`}>
-                <div className={`bg-componentsColor p-[1rem] ${breakpoint >= 768 ? `${breakpoint >= 992 ? "my-[1rem] w-[calc(100%-1rem)]" : "mx-[1rem] w-[calc(100%-2rem)]"} rounded-xl` : "w-full"}`}>
+            <div className={`w-full ${breakpoint >= 768 ? "overflow-scroll h-full" : "overflow-hidden h-fit"} ${breakpoint >= 992 ? "[&>div]:ml-[0rem] mt-[1rem]" : ''}`}>
+                <div className={`bg-componentsColor ${breakpoint >= 768 ? `${breakpoint >= 992 ? "w-[calc(100%-1rem)]" : "w-[calc(100%-2rem)]"} rounded-xl` : "w-full"}`}>
                     <span>
                         <p className="font-bold text-[1.35rem] text-nowrap">Tech Stack</p>
                     </span>
