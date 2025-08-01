@@ -241,11 +241,26 @@
   .my-\[1rem\] {
     margin-block: 1rem;
   }
+  .mt-\[1rem\] {
+    margin-top: 1rem;
+  }
   .mt-auto {
     margin-top: auto;
   }
+  .mb-0 {
+    margin-bottom: calc(var(--spacing) * 0);
+  }
+  .mb-\[0\.5rem\] {
+    margin-bottom: 0.5rem;
+  }
+  .mb-\[0rem\] {
+    margin-bottom: 0rem;
+  }
   .mb-\[1rem\] {
     margin-bottom: 1rem;
+  }
+  .ml-\[0rem\] {
+    margin-left: 0rem;
   }
   .block {
     display: block;
@@ -299,6 +314,9 @@
   }
   .h-\[100\%\] {
     height: 100%;
+  }
+  .h-\[500px\] {
+    height: 500px;
   }
   .h-\[calc\(80px\+3\.5rem\)\] {
     height: calc(80px + 3.5rem);
@@ -635,6 +653,16 @@
       color: var(--color-sideTextColorActive);
     }
   }
+  .\[\&\>div\]\:mx-\[1rem\] {
+    &>div {
+      margin-inline: 1rem;
+    }
+  }
+  .\[\&\>div\]\:ml-\[0rem\] {
+    &>div {
+      margin-left: 0rem;
+    }
+  }
   .\[\&\>div\]\:flex {
     &>div {
       display: flex;
@@ -665,10 +693,25 @@
       row-gap: 0.5rem;
     }
   }
+  .\[\&\>div\]\:gap-y-\[1rem\] {
+    &>div {
+      row-gap: 1rem;
+    }
+  }
   .\[\&\>div\]\:shadow-\[0px_0px_10px_var\(--color-navShadowColor\)\] {
     &>div {
       --tw-shadow: 0px 0px 10px var(--tw-shadow-color, var(--color-navShadowColor));
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+  .\[\&\>div\>div\]\:mx-\[0\.5rem\] {
+    &>div>div {
+      margin-inline: 0.5rem;
+    }
+  }
+  .\[\&\>div\>div\]\:mx-\[1rem\] {
+    &>div>div {
+      margin-inline: 1rem;
     }
   }
   .\[\&\>div\>div\]\:border {
@@ -680,6 +723,11 @@
   .\[\&\>div\>div\]\:border-borderColor {
     &>div>div {
       border-color: var(--color-borderColor);
+    }
+  }
+  .\[\&\>div\>div\]\:p-\[1rem\] {
+    &>div>div {
+      padding: 1rem;
     }
   }
   .\[\&\>div\>div\]\:shadow-\[0px_0px_10px_var\(--color-navShadowColor\)\] {
@@ -742,6 +790,11 @@
     &>div>span>span>p {
       --tw-font-weight: var(--font-weight-bold);
       font-weight: var(--font-weight-bold);
+    }
+  }
+  .\[\&\>first\:div\>div\]\:mx-\[1rem\] {
+    &>first:div>div {
+      margin-inline: 1rem;
     }
   }
   .\[\&\>li\]\:inline-block {
