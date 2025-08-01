@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import LoadingScreen from '../../components/Loader/LoadingScreen';
-import ClassicWar from './components/classic-war';
+// import ClassicWar from './components/classic-war';
 
 function ClashofClans(){
     const [isLoading, setIsLoading] = useState(true);
