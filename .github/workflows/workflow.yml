@@ -30,16 +30,16 @@ jobs:
       - uses: actions/checkout@v4
 
       # Runs a single command using the runners shell
-      - name: Run one command
-        run: echo Testing one command
+      - name: Get Test Secret
+        run: echo ${{ REACT_APP_TESTSECRET }}
 
       # Runs a set of commands using the runners shell
       - name: Build
+        env:
+            REACT_APP_GITHUBGRAPHQL_TOKEN: ${{ secrets.REACT_APP_GITHUBGRAPHQL_TOKEN }}
         run: |
             npm install
             npm run build
-        env:
-            REACT_APP_GITHUBGRAPHQL_TOKEN: ${{ secrets.REACT_APP_GITHUBGRAPHQL_TOKEN }}
             
      # - name: Deploy
      #   uses: JamesIves/github-pages-deploy-action@releases/v4
