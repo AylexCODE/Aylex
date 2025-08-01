@@ -4,7 +4,7 @@ export default function SideBar(props){
     return (
         <div className={"h-[100%] w-[100%] flex flex-col bg-componentsColor border border-borderColor rounded-xl" +(props.bp <= 640 ? " border-none" : "")}>
             <div className="flex flex-col gap-[1.25rem] p-[1.25rem]">
-                <img src="%PUBLIC_URL%/../favicon.svg" alt="logo" className="w-[6rem] h-[6rem] rounded-full bg-bgColorClear"></img>
+                <img src="%PUBLIC_URL%/../favicon.svg" alt="logo" className="w-[6rem] h-[6rem] rounded-max bg-bgColorClear"></img>
                     <div className="flex flex-col gap-[0.25rem] text-textColor">
                     <h1 className="text-lg font-bold text-ellipsis text-nowrap whitespace-nowrap overflow-x-hidden">Alexander I. Jala</h1>
                     <p className="text-sm text-ellipsis text-nowrap whitespace-nowrap overflow-x-hidden">Trainee Developer</p>

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+    --radius-max: 100%;
     --font-textFont: "Space Grotesk", "Poppins", sans-serif;
     --color-bgColor: #F2F1F6;
     --color-componentsColor: #F8F8F3;

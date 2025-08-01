@@ -34,6 +34,7 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
+    --radius-max: 100%;
     --font-textFont: "Space Grotesk", "Poppins", sans-serif;
     --color-bgColor: #F2F1F6;
     --color-componentsColor: #F8F8F3;
@@ -269,6 +270,9 @@
   .block {
     display: block;
   }
+  .contents {
+    display: contents;
+  }
   .flex {
     display: flex;
   }
@@ -484,11 +488,11 @@
   .rounded-2xl {
     border-radius: var(--radius-2xl);
   }
-  .rounded-full {
-    border-radius: calc(infinity * 1px);
-  }
   .rounded-lg {
     border-radius: var(--radius-lg);
+  }
+  .rounded-max {
+    border-radius: var(--radius-max);
   }
   .rounded-xl {
     border-radius: var(--radius-xl);
