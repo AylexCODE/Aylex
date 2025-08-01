@@ -1,5 +1,9 @@
+import GithubContributions from './components/GithubContributions';
+
 export default function Projects(){
     return (
-        <p>Projects</p>
+        <div className="bg-componentsColor p-[1rem]">
+            <GithubContributions />
+        </div>
     )
 }

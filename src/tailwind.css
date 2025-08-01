@@ -25,6 +25,7 @@
     --font-weight-bold: 700;
     --font-weight-extrabold: 800;
     --font-weight-black: 900;
+    --radius-xs: 0.125rem;
     --radius-lg: 0.5rem;
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
@@ -43,6 +44,8 @@
     --color-sideBarCover: rgba(0, 0, 0, 0.4);
     --color-sideTextColorActive: #4884CA;
     --color-borderColor: #D9D9D9;
+    --color-activeBtnColor: #ffd416;
+    --color-activeBtnShadowColor: rgba(255, 212, 22, 0.1);
   }
 }
 @layer base {
@@ -212,6 +215,9 @@
   .top-0 {
     top: calc(var(--spacing) * 0);
   }
+  .top-\[-20px\] {
+    top: -20px;
+  }
   .top-\[7px\] {
     top: 7px;
   }
@@ -304,6 +310,9 @@
   .h-\[15rem\] {
     height: 15rem;
   }
+  .h-\[16px\] {
+    height: 16px;
+  }
   .h-\[20rem\] {
     height: 20rem;
   }
@@ -312,6 +321,9 @@
   }
   .h-\[100\%\] {
     height: 100%;
+  }
+  .h-\[160px\] {
+    height: 160px;
   }
   .h-\[calc\(80px\+3\.5rem\)\] {
     height: calc(80px + 3.5rem);
@@ -358,6 +370,9 @@
   .w-\[70\%\] {
     width: 70%;
   }
+  .w-\[75px\] {
+    width: 75px;
+  }
   .w-\[100\%\] {
     width: 100%;
   }
@@ -370,11 +385,17 @@
   .w-\[calc\(100\%-2rem\)\] {
     width: calc(100% - 2rem);
   }
+  .w-\[calc\(100\%-90px\)\] {
+    width: calc(100% - 90px);
+  }
   .w-dvh {
     width: 100dvh;
   }
   .w-dvw {
     width: 100dvw;
+  }
+  .w-fit {
+    width: fit-content;
   }
   .w-full {
     width: 100%;
@@ -409,6 +430,9 @@
   .justify-between {
     justify-content: space-between;
   }
+  .justify-end {
+    justify-content: flex-end;
+  }
   .justify-start {
     justify-content: flex-start;
   }
@@ -430,6 +454,15 @@
   .gap-\[2\.5rem\] {
     gap: 2.5rem;
   }
+  .gap-\[4px\] {
+    gap: 4px;
+  }
+  .gap-\[8px\] {
+    gap: 8px;
+  }
+  .gap-\[16px\] {
+    gap: 16px;
+  }
   .gap-y-\[0\.5rem\] {
     row-gap: 0.5rem;
   }
@@ -447,6 +480,9 @@
   }
   .overflow-x-scroll {
     overflow-x: scroll;
+  }
+  .rounded-2xl {
+    border-radius: var(--radius-2xl);
   }
   .rounded-full {
     border-radius: calc(infinity * 1px);
@@ -517,6 +553,9 @@
   .p-\[1rem\] {
     padding: 1rem;
   }
+  .p-\[16px\] {
+    padding: 16px;
+  }
   .px-\[1\.25rem\] {
     padding-inline: 1.25rem;
   }
@@ -525,6 +564,9 @@
   }
   .py-\[1rem\] {
     padding-block: 1rem;
+  }
+  .py-\[8px\] {
+    padding-block: 8px;
   }
   .pt-\[0\.5rem\] {
     padding-top: 0.5rem;
@@ -583,6 +625,12 @@
   }
   .text-\[1\.35rem\] {
     font-size: 1.35rem;
+  }
+  .text-\[12\.8px\] {
+    font-size: 12.8px;
+  }
+  .text-\[14px\] {
+    font-size: 14px;
   }
   .font-black {
     --tw-font-weight: var(--font-weight-black);
@@ -666,9 +714,31 @@
       color: var(--color-sideTextColorActive);
     }
   }
-  .\[\&\>div\]\:mx-\[1rem\] {
-    &>div {
-      margin-inline: 1rem;
+  .\[\&\>\.active\]\:border-activeBtnColor {
+    &>.active {
+      border-color: var(--color-activeBtnColor);
+    }
+  }
+  .\[\&\>\.active\]\:bg-activeBtnColor {
+    &>.active {
+      background-color: var(--color-activeBtnColor);
+    }
+  }
+  .\[\&\>\.active\]\:font-medium {
+    &>.active {
+      --tw-font-weight: var(--font-weight-medium);
+      font-weight: var(--font-weight-medium);
+    }
+  }
+  .\[\&\>\.active\]\:text-componentsColor {
+    &>.active {
+      color: var(--color-componentsColor);
+    }
+  }
+  .\[\&\>\.active\]\:shadow-\[0px_2px_0px_var\(--color-activeBtnShadowColor\)\] {
+    &>.active {
+      --tw-shadow: 0px 2px 0px var(--tw-shadow-color, var(--color-activeBtnShadowColor));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
   .\[\&\>div\]\:ml-\[0rem\] {
@@ -721,20 +791,9 @@
       row-gap: 1rem;
     }
   }
-  .\[\&\>div\]\:overflow-hidden {
-    &>div {
-      overflow: hidden;
-    }
-  }
   .\[\&\>div\]\:overflow-scroll {
     &>div {
       overflow: scroll;
-    }
-  }
-  .\[\&\>div\]\:shadow-\[0px_0px_10px_var\(--color-navShadowColor\)\] {
-    &>div {
-      --tw-shadow: 0px 0px 10px var(--tw-shadow-color, var(--color-navShadowColor));
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
   .\[\&\>div\>div\]\:mx-\[1rem\] {
@@ -767,26 +826,6 @@
     &>div>div {
       --tw-shadow: 0px 0px 10px var(--tw-shadow-color, var(--color-componentsShadow));
       box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    }
-  }
-  .\[\&\>div\>div\]\:shadow-\[0px_0px_10px_var\(--color-navShadowColor\)\] {
-    &>div>div {
-      --tw-shadow: 0px 0px 10px var(--tw-shadow-color, var(--color-navShadowColor));
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    }
-  }
-  .\[\&\>div\>div\]\:shadow-\[0px_0px_10px_var\(--color-navr\)\] {
-    &>div>div {
-      --tw-shadow: 0px 0px 10px var(--tw-shadow-color, var(--color-navr));
-      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-    }
-  }
-  .\[\&\>div\]\:\[\&\>div\>div\]\:shadow-\[0px_0px_10px_var\(--color-componentsShadow\)\] {
-    &>div {
-      &>div>div {
-        --tw-shadow: 0px 0px 10px var(--tw-shadow-color, var(--color-componentsShadow));
-        box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
-      }
     }
   }
   .\[\&\>div\>div\>span\]\:flex {
@@ -885,6 +924,11 @@
       overflow: hidden;
     }
   }
+  .\[\&\>li\]\:rounded-lg {
+    &>li {
+      border-radius: var(--radius-lg);
+    }
+  }
   .\[\&\>li\]\:rounded-xl {
     &>li {
       border-radius: var(--radius-xl);
@@ -899,6 +943,22 @@
   .\[\&\>li\]\:border-borderColor {
     &>li {
       border-color: var(--color-borderColor);
+    }
+  }
+  .\[\&\>li\]\:p-\[4px\] {
+    &>li {
+      padding: 4px;
+    }
+  }
+  .\[\&\>li\]\:text-center {
+    &>li {
+      text-align: center;
+    }
+  }
+  .\[\&\>li\]\:shadow-\[0px_2px_0px_var\(--color-navShadowColor\)\] {
+    &>li {
+      --tw-shadow: 0px 2px 0px var(--tw-shadow-color, var(--color-navShadowColor));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
   .\[\&\>li\>a\]\:flex {
@@ -958,6 +1018,11 @@
       display: flex;
     }
   }
+  .\[\&\>span\]\:flex-col {
+    &>span {
+      flex-direction: column;
+    }
+  }
   .\[\&\>span\]\:flex-row {
     &>span {
       flex-direction: row;
@@ -966,6 +1031,103 @@
   .\[\&\>span\]\:gap-\[2\.5rem\] {
     &>span {
       gap: 2.5rem;
+    }
+  }
+  .\[\&\>span\]\:gap-\[4px\] {
+    &>span {
+      gap: 4px;
+    }
+  }
+  .\[\&\>span\]\:first\:\[\&\>span\]\:items-end {
+    &>span {
+      &:first-child {
+        &>span {
+          align-items: flex-end;
+        }
+      }
+    }
+  }
+  .\[\&\>span\>p\]\:text-center {
+    &>span>p {
+      text-align: center;
+    }
+  }
+  .\[\&\>span\>span\]\:flex {
+    &>span>span {
+      display: flex;
+    }
+  }
+  .\[\&\>span\>span\]\:flex-row {
+    &>span>span {
+      flex-direction: row;
+    }
+  }
+  .\[\&\>span\>span\]\:justify-end {
+    &>span>span {
+      justify-content: flex-end;
+    }
+  }
+  .\[\&\>span\>span\]\:gap-\[4px\] {
+    &>span>span {
+      gap: 4px;
+    }
+  }
+  .\[\&\>span\>span\>ul\]\:flex {
+    &>span>span>ul {
+      display: flex;
+    }
+  }
+  .\[\&\>span\>span\>ul\]\:flex-col {
+    &>span>span>ul {
+      flex-direction: column;
+    }
+  }
+  .\[\&\>span\>span\>ul\]\:gap-\[4px\] {
+    &>span>span>ul {
+      gap: 4px;
+    }
+  }
+  .\[\&\>span\>span\>ul\>li\]\:size-\[12px\] {
+    &>span>span>ul>li {
+      width: 12px;
+      height: 12px;
+    }
+  }
+  .\[\&\>span\>span\>ul\>li\]\:rounded-xs {
+    &>span>span>ul>li {
+      border-radius: var(--radius-xs);
+    }
+  }
+  .\[\&\>span\>span\>ul\>li\]\:inset-shadow-\[0px_0px_0px_1px_var\(--color-navShadowColor\)\] {
+    &>span>span>ul>li {
+      --tw-inset-shadow: inset 0px 0px 0px 1px var(--tw-inset-shadow-color, var(--color-navShadowColor));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+  .\[\&\>ul\]\:flex {
+    &>ul {
+      display: flex;
+    }
+  }
+  .\[\&\>ul\]\:flex-row {
+    &>ul {
+      flex-direction: row;
+    }
+  }
+  .\[\&\>ul\]\:gap-\[2px\] {
+    &>ul {
+      gap: 2px;
+    }
+  }
+  .\[\&\>ul\>li\]\:size-\[12px\] {
+    &>ul>li {
+      width: 12px;
+      height: 12px;
+    }
+  }
+  .\[\&\>ul\>li\]\:rounded-xs {
+    &>ul>li {
+      border-radius: var(--radius-xs);
     }
   }
 }
