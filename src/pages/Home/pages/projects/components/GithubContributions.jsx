@@ -5,8 +5,7 @@ export default function GithubContributions(){
     const [data, setData] = useState();
     const [contributions, setContributions] = useState();
     const [activeYear, setActiveYear] = useState(0);
-    
-    
+
     useEffect(() => {
         (async function(){
             const data = await new GithubGraphQL().getContributions();
@@ -15,6 +14,7 @@ export default function GithubContributions(){
             
             calculateContributions(data.data['y'+data.years[1]]);
         })();
+        // eslint-disable-next-line
     }, []);
     
     function getMonth(n){
@@ -31,11 +31,12 @@ export default function GithubContributions(){
             case "10": return "Oct";
             case "11": return "Nov";
             case "12": return "Dec";
+            default: return "N/A";
         }
     }
     
     function calculateContributions(data){
-        let currentMonth = null, currentWeek = 0, days = 0;
+        let currentMonth = null, currentWeek = 0;
         const months = [];
         
         for(const day of data){
@@ -54,7 +55,6 @@ export default function GithubContributions(){
                 months[currentMonth][currentWeek] = [day];
             }
             
-            days++;
             //if(maxContributionCount < day.contributionCount) maxContributionCount = day.contributionCount;
         }
         
