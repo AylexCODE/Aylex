@@ -80,7 +80,7 @@ export default function GithubContributions(){
                     months[monthForLatest][currentWeek] = [day];
                 }
                 
-                if(day.contributionCount != 0){
+                if(day.contributionCount !== 0){
                     streak++;
                     lastStreak = day.date;
                     if(resetStreak){
