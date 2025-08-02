@@ -53,7 +53,8 @@ export default class GithubGraphQL {
             const contribution = {
                 years: [],
                 data: {},
-                colors: response.user.contributionsCollection.contributionCalendar.colors
+                colors: response.user.contributionsCollection.contributionCalendar.colors,
+                totalContributions: response.user.contributionsCollection.contributionCalendar.totalContributions
             };
             
             for(const week of response.user.contributionsCollection.contributionCalendar.weeks){
