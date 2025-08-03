@@ -392,8 +392,14 @@
   .w-\[300px\] {
     width: 300px;
   }
+  .w-\[844px\] {
+    width: 844px;
+  }
   .w-\[919px\] {
     width: 919px;
+  }
+  .w-\[935px\] {
+    width: 935px;
   }
   .w-\[calc\(100\%-1rem\)\] {
     width: calc(100% - 1rem);
@@ -831,6 +837,21 @@
       margin-inline: 1rem;
     }
   }
+  .\[\&\>div\>div\]\:w-\[calc\(100\%-2rem\)\] {
+    &>div>div {
+      width: calc(100% - 2rem);
+    }
+  }
+  .\[\&\>div\>div\]\:w-full {
+    &>div>div {
+      width: 100%;
+    }
+  }
+  .\[\&\>div\>div\]\:rounded-xl {
+    &>div>div {
+      border-radius: var(--radius-xl);
+    }
+  }
   .\[\&\>div\>div\]\:border {
     &>div>div {
       border-style: var(--tw-border-style);
@@ -1152,6 +1173,13 @@
   .\[\&\>span\>span\]\:gap-\[4px\] {
     &>span>span {
       gap: 4px;
+    }
+  }
+  .\[\&\>span\>span\]\:last\:justify-start {
+    &>span>span {
+      &:last-child {
+        justify-content: flex-start;
+      }
     }
   }
   .\[\&\>span\>span\>ul\]\:flex {

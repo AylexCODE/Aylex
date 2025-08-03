@@ -29,7 +29,7 @@ export default function GithubContributions(){
         }
         
         const dataLength = finalData.length;
-        const excessDays = dataLength - 364;
+        const excessDays = dataLength - 365;
         
         return finalData.slice(excessDays, dataLength);
     }
@@ -61,13 +61,13 @@ export default function GithubContributions(){
         
         let currentMonth = null, currentWeek = 0, monthForLatest = 0, totalContribution = 0, firstMonth, streak = 0, longestStreak = 0, firstLongestStreak, lastLongestStreak, firstStreak, lastStreak, resetStreak = true, resetLongestStreak = true;
         const months = [], possibleFirstLongestStreak = [];
-        
+
         if(index === "Last Year"){
             for(const day of data){
                 const monthInData = parseInt(day.date.split("-")[1]);
                 totalContribution += day.contributionCount; if(!firstMonth) firstMonth = day.date;
                 
-                if((currentMonth === monthInData || day.weekday) !== 0 && currentMonth){
+                if((currentMonth === monthInData || day.weekday !== 0) && currentMonth){
                     if(day.weekday === 0){
                         months[monthForLatest][++currentWeek] = [day];
                     }else{
@@ -80,7 +80,7 @@ export default function GithubContributions(){
                     months[monthForLatest][currentWeek] = [day];
                 }
                 
-                if(day.contributionCount !== 0){
+                if(day.contributionCount != 0){
                     streak++;
                     lastStreak = day.date;
                     if(resetStreak){
@@ -107,7 +107,7 @@ export default function GithubContributions(){
                 const monthInData = parseInt(day.date.split("-")[1]);
                 totalContribution += day.contributionCount; if(!firstMonth) firstMonth = day.date;
                 
-                if((currentMonth === monthInData || day.weekday) !== 0 && currentMonth){
+                if((currentMonth === monthInData || day.weekday !== 0) && currentMonth){
                     if(day.weekday === 0){
                         months[currentMonth][++currentWeek] = [day];
                     }else{
@@ -133,9 +133,9 @@ export default function GithubContributions(){
         if(index === "Last Year"){
             firstLongestStreak = possibleFirstLongestStreak[possibleFirstLongestStreak.indexOf(lastLongestStreak)-1];
             
-            setStatistics([totalContribution, firstMonth, lastMonth, longestStreak, firstLongestStreak, lastLongestStreak, streak, firstStreak, lastStreak]);
+            setStatistics([totalContribution, firstMonth, lastMonth, longestStreak, firstLongestStreak, lastLongestStreak, streak, firstStreak, lastStreak, "the last year"]);
         }else{
-            setStatistics([totalContribution, firstMonth, lastMonth, statistics[3], statistics[4], statistics[5], statistics[6], statistics[7], statistics[8]]);
+            setStatistics([totalContribution, firstMonth, lastMonth, statistics[3], statistics[4], statistics[5], statistics[6], statistics[7], statistics[8], index]);
         }
     }
     
@@ -150,8 +150,8 @@ export default function GithubContributions(){
         <div className="h-fit w-full p-[16px] overflow-scroll text-[14px] border border-borderColor rounded-2xl">
         {data ? (
         <div className="w-fit">
-            <div className="w-[919px] flex flex-row gap-[16px]">
-                <div className={`w-fit flex flex-row gap-[4px] [&>span]:flex [&>span]:flex-col [&>span]:gap-[4px] [&>span>p]:text-center [&>span>span]:flex [&>span>span]:flex-row [&>span>span]:gap-[4px] [&>span>span]:justify-end [&>span]:first:[&>span]:items-end [&>span>span>ul]:flex [&>span>span>ul]:flex-col [&>span>span>ul]:gap-[4px] [&>span>span>ul>li]:size-[12px] [&>span>span>ul>li]:inset-shadow-[0px_0px_0px_1px_var(--color-navShadowColor)] [&>span>span>ul>li]:rounded-xs`}>
+            <div className="w-[935px] flex flex-row gap-[16px]">
+                <div className={`w-[844px] overflow-hidden flex flex-row gap-[4px] [&>span]:flex [&>span]:flex-col [&>span]:gap-[4px] [&>span>p]:text-center [&>span>span]:flex [&>span>span]:flex-row [&>span>span]:gap-[4px] [&>span>span]:justify-end [&>span>span]:last:justify-start [&>span]:first:[&>span]:items-end [&>span>span>ul]:flex [&>span>span>ul]:flex-col [&>span>span>ul]:gap-[4px] [&>span>span>ul>li]:size-[12px] [&>span>span>ul>li]:inset-shadow-[0px_0px_0px_1px_var(--color-navShadowColor)] [&>span>span>ul>li]:rounded-xs`}>
                     {contributions.map((months) => (
                         <span key={'c'+months[0][0].date}>
                             <p>{getMonth(months[0][0].date.split("-")[1])}</p>
@@ -159,7 +159,7 @@ export default function GithubContributions(){
                             {months.map((week) => (
                                 <ul key={'d'+week[0].date}>{
                                 week.map(day => (
-                                    <li key={day.date} datalevel={day.contributionLevel} style={{backgroundColor: day.color}}></li>
+                                    <li key={day.date} title={`${day.contributionCount} contributions in ${day.date}`} datalevel={day.contributionLevel} style={{backgroundColor: day.color}}></li>
                                 ))}</ul>
                             ))}
                             </span>
@@ -188,7 +188,7 @@ export default function GithubContributions(){
                 <div className="w-full flex justify-center relative bottom-[16px]">
                     <div className="w-full flex flex-row justify-around border border-borderColor rounded-lg h-[100px] p-[16px] [&>span]:w-full [&>span]:text-center [&>span]:overflow-scroll [&>span]:text-nowrap [&>span]:whitespace-nowrap [&>span>h4]:font-medium [&>span>h4]:text-[16px]">
                         <span>
-                            <p>Contributions in the last year</p>
+                            <p>Contributions in {statistics[9]}</p>
                             <h4>{statistics[0]}</h4>
                             <p>{formatDate(statistics[1])} - {formatDate(statistics[2])}</p>
                         </span>
