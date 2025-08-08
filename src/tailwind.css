@@ -1092,6 +1092,11 @@
       width: 20rem;
     }
   }
+  .\[\&\>li\>div\]\:overflow-hidden {
+    &>li>div {
+      overflow: hidden;
+    }
+  }
   .\[\&\>li\>div\]\:rounded-t-xl {
     &>li>div {
       border-top-left-radius: var(--radius-xl);
