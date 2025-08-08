@@ -12,6 +12,9 @@ export default function TechStack(props){
     useEffect(() => {
         iconsDisplay.current.offsetWidth > iconsWrapper.current.offsetWidth ? setApplyAnimate(iconsDisplay.current.offsetWidth+40) : setApplyAnimate(false);
         iconsDisplay2.current.offsetWidth > iconsWrapper.current.offsetWidth ? setApplyAnimate2(iconsDisplay2.current.offsetWidth+40) : setApplyAnimate2(false);
+        
+        props.techies(icons.props.children.length + icons2.props.children.length);
+        // eslint-disable-next-line
     }, [props.bp]);
 
     const icons = (<>

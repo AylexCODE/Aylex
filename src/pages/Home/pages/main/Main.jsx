@@ -1,14 +1,15 @@
 import moment from "moment/moment";
 import { useEffect, useState } from "react";
 import { useOutletContext } from "react-router-dom";
-import TechStack from "./components/TechStack";
 import OverallStats from "./components/OverallStats";
 import Featured from "./components/Featured";
+import TechStack from './components/TechStack';
 import Socials from "./components/Socials";
 
 export default function Main(){
     const [dateTime, setDateTime] = useState(moment(new Date()).format("ddd, MMMM Do YYYY, hh:mm:ss A"));
     const [date, setDate] = useState(moment(new Date()).format("DD"));
+    const [techStack, setTechStack] = useState(0);
 
     useEffect(() => {
         const d = setInterval(() => {
@@ -22,8 +23,8 @@ export default function Main(){
     const breakpoint = useOutletContext();
     
     return (
-        <div className={`w-full scrollbar-hidden gap-y-[0.5rem] grid [&>div]:w-full [&>div]:flex [&>div]:flex-col [&>div]:gap-y-[0.5rem] [&>div>div]:bg-componentsColor [&>div>div]:p-[1rem] [&>div>div>span]:flex [&>div>div>span]:flex-row [&>div>div>span]:gap-[0.75rem] [&>div>div>span]:items-center ${breakpoint >= 992 ? "h-full grid-cols-[2fr_1fr]" : "h-fit grid-cols-1"} ${breakpoint >= 768 ? "gap-y-[1rem] [&>div]:overflow-scroll [&>div]:h-full [&>div]:gap-y-[1rem] [&>div>div]:mx-[1rem] [&>div>div]:border [&>div>div]:border-borderColor [&>div>div]:w-[calc(100%-2rem)] [&>div>div]:rounded-xl [&>div]:gap-[1rem]" : "[&>div]:h-fit [&>div>div]:shadow-[0px_0px_10px_var(--color-componentsShadow)] [&>div>div]:w-full"}`}>
-            <div>
+        <div className={`w-full scrollbar-hidden gap-y-[0.5rem] grid [&>div]:w-full [&>div]:flex [&>div]:flex-col [&>div]:gap-y-[0.5rem] [&>div>div]:bg-componentsColor [&>div>div]:p-[1rem] [&>div>div>span]:flex [&>div>div>span]:flex-row [&>div>div>span]:gap-[0.75rem] [&>div>div>span]:items-center ${breakpoint >= 992 ? "h-full grid-cols-[2fr_1fr]" : "h-fit grid-cols-1"} ${breakpoint >= 768 ? `gap-y-[1rem] [&>div]:overflow-scroll [&>div]:h-full [&>div]:gap-y-[1rem] ${breakpoint >= 992 ? "[&>div]:first:[&>div]:ml-[1rem] [&>div>div]:mr-[1rem]" : "[&>div>div]:mx-[1rem]"} [&>div>div]:border [&>div>div]:border-borderColor [&>div]:first:[&>div]:w-[calc(100%-2rem)] [&>div>div]:rounded-xl [&>div]:gap-[1rem]` : "[&>div]:h-fit [&>div>div]:shadow-[0px_0px_10px_var(--color-componentsShadow)] [&>div]:first:[&>div]:w-full"}`}>
+            <div className={breakpoint >= 992 ? "pb-[1rem]" : ""}>
                 <span className={`block w-[calc(100%-2rem)] m-[1rem] mb-[0.5rem] ${breakpoint >= 992 ? "aspect-[2.5/1] mb-[0rem]" : breakpoint >= 768 ? "aspect-[1.8/1] mb-[0rem]" : "aspect-[1.35/1]"} flex flex-col p-[1.2rem] rounded-xl text-componentsColor bg-[#123456]`}>
                     <span className="flex flex-row items-start justify-start gap-[0.5rem]">
                         <span className="relative">
@@ -41,7 +42,7 @@ export default function Main(){
                         <svg width="22px" height="22px" viewBox="0 0 22 22"><path fill="#000000" fill-opacity="1.0" stroke="#000000" stroke-width="1.0" stroke-opacity="0.0" stroke-miterlimit="10" d="M3.16,17.0C3.82,14.32,4.37,12.14,4.79,10.46C4.89,10.07,5.14,10.13,5.35,10.3C6.35,11.09,8.51,12.81,8.51,12.81C8.51,12.81,11.27,6.16,11.69,5.16C11.76,4.99,11.86,4.93,11.99,5.1C12.63,5.91,15.13,9.07,15.13,9.07C15.13,9.07,18.98,3.11,19.51,2.23C20.21,1.08,15.57,12.84,15.57,12.84C15.57,12.84,12.3,8.84,12.3,8.84C12.3,8.84,10.16,13.95,9.48,15.47C9.37,15.71,9.12,15.66,8.99,15.56C8.21,15.0,6.05,13.49,6.05,13.49C6.05,13.49,5.59,15.37,5.09,17.4C4.73,18.86,2.8,18.49,3.16,17.0Z" stroke-linecap="round"/><path fill="#000000" fill-opacity="1.0" stroke="#000000" stroke-width="2.0" stroke-opacity="0.0" stroke-miterlimit="10" d="M0.04,20.85C0.04,20.85,0.04,2.0,0.04,0.94C0.05,-0.3,1.95,-0.28,1.95,1.03C1.95,2.27,2.05,18.66,2.05,19.42C2.05,19.92,2.1,19.95,2.66,19.95C3.89,19.94,19.37,19.93,21.01,19.92C22.28,19.92,22.25,21.82,21.01,21.83C19.31,21.84,1.54,21.96,0.99,21.94C0.5,21.93,0.05,21.55,0.04,20.85Z" stroke-linecap="round"/></svg>
                         <p className="font-bold text-[1.35rem] text-nowrap">Overall Stats</p>
                     </span>
-                    <OverallStats bp={breakpoint} />
+                    <OverallStats bp={breakpoint} techies={techStack} />
                 </div>
                 <div>
                     <span>
@@ -51,14 +52,14 @@ export default function Main(){
                     <Featured bp={breakpoint} />
                 </div>
             </div>
-            <div className={breakpoint >= 992 ? "[&>div]:ml-[0rem] mt-[1rem] mb-[1rem]" : 'mb-[1rem]'}>
-                <div className={`bg-componentsColor ${breakpoint >= 768 ? `${breakpoint >= 992 ? "w-[calc(100%-1rem)]" : "w-[calc(100%-2rem)]"} rounded-xl` : "w-full"}`}>
+            <div className={`${breakpoint >= 992 ? "[&>div]:ml-[0rem] pt-[1rem]" : "mb-[1rem]"} ${breakpoint >= 768 ? `${breakpoint >= 992 ? "[&>div]:w-[calc(100%-1rem)]" : "[&>div]:w-[calc(100%-2rem)]"} [&>div]:rounded-xl` : "w-full"}`}>
+                <div>
                     <span>
                         <svg width="22px" height="22px" viewBox="0 0 22 22"><path fill="#000000" fill-opacity="1.0" stroke="#000000" stroke-width="0.5" stroke-opacity="0.0" stroke-miterlimit="10" d="M8.9,2.68C8.9,2.68,2.09,6.61,0.8,7.34C-0.09,7.83,-0.3,8.69,0.61,9.2C4.3,11.26,11.0,15.19,11.0,15.19C11.0,15.19,19.73,10.15,21.27,9.29C22.24,8.74,22.22,8.0,21.29,7.41C19.89,6.55,17.32,5.09,16.49,4.64C16.24,4.5,15.95,4.44,15.57,4.65C15.12,4.89,14.46,5.2,12.04,6.63C10.85,7.33,10.06,6.83,10.06,6.83C10.06,6.83,9.62,9.25,9.62,9.25C9.62,9.25,12.24,9.67,12.24,9.67C12.24,9.67,12.0,8.7,13.41,7.98C15.48,6.92,15.0,7.2,15.8,6.77C16.02,6.65,16.08,6.65,16.31,6.76C17.46,7.36,17.42,7.31,18.52,7.93C18.84,8.11,18.82,8.52,18.53,8.69C17.65,9.19,12.73,11.89,11.53,12.56C11.02,12.84,10.79,12.84,10.31,12.56C9.17,11.91,5.14,9.62,3.69,8.82C3.06,8.47,3.07,8.1,3.69,7.79C4.68,7.3,10.42,4.0,10.42,4.0C12.46,4.54,13.39,2.47,12.39,1.54C11.43,0.64,9.52,0.77,8.9,2.68Z" stroke-linecap="round"/><path fill="#000000" fill-opacity="1.0" stroke="#000000" stroke-width="0.0" stroke-opacity="0.0" stroke-miterlimit="10" d="M3.92,11.11C4.14,11.51,3.85,11.62,3.5,11.82C2.84,12.2,1.09,13.12,0.47,13.47C-0.13,13.82,-0.09,14.72,0.55,15.14C1.67,15.87,11.01,21.03,11.01,21.03C11.01,21.03,21.07,15.3,21.51,15.05C22.08,14.73,22.18,13.77,21.46,13.36C21.11,13.17,18.77,11.96,18.31,11.72C18.0,11.55,17.8,11.24,18.4,10.78C18.64,10.59,14.2,13.13,14.88,12.87C15.68,12.55,15.92,12.43,16.53,12.77C17.26,13.18,18.15,13.61,18.47,13.8C18.97,14.09,18.92,14.39,18.5,14.62C18.06,14.87,11.01,18.85,11.01,18.85C11.01,18.85,4.28,14.92,3.54,14.49C3.15,14.25,3.37,14.04,3.57,13.93C4.24,13.56,4.74,13.3,5.5,12.88C6.03,12.58,6.14,12.51,6.88,12.78C7.06,12.85,3.54,10.45,3.92,11.11Z" stroke-linecap="round"/></svg>
                         <p className="font-bold text-[1.35rem] text-nowrap">Tech Stack</p>
                     </span>
                     <div className="w-full">
-                        <TechStack bp={breakpoint} />
+                        <TechStack bp={breakpoint} techies={setTechStack} />
                     </div>
                 </div>
                 <div>

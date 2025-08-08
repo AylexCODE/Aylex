@@ -28,7 +28,7 @@ export default function OverallStats(props){
                 <span>
                     <span>
                         <div className="h-[48px] w-[48px] rounded-xl bg-black"></div>
-                        <p>-</p>
+                        <p>{props.techies}</p>
                     </span>
                     <p>Technologies</p>
                 </span>

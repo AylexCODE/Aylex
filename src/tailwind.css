@@ -395,9 +395,6 @@
   .w-\[844px\] {
     width: 844px;
   }
-  .w-\[919px\] {
-    width: 919px;
-  }
   .w-\[935px\] {
     width: 935px;
   }
@@ -424,6 +421,12 @@
   }
   .resize {
     resize: both;
+  }
+  .snap-x {
+    scroll-snap-type: x var(--tw-scroll-snap-strictness);
+  }
+  .snap-mandatory {
+    --tw-scroll-snap-strictness: mandatory;
   }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -797,6 +800,16 @@
       height: 100%;
     }
   }
+  .\[\&\>div\]\:w-\[calc\(100\%-1rem\)\] {
+    &>div {
+      width: calc(100% - 1rem);
+    }
+  }
+  .\[\&\>div\]\:w-\[calc\(100\%-2rem\)\] {
+    &>div {
+      width: calc(100% - 2rem);
+    }
+  }
   .\[\&\>div\]\:w-full {
     &>div {
       width: 100%;
@@ -832,9 +845,46 @@
       overflow: scroll;
     }
   }
+  .\[\&\>div\]\:rounded-xl {
+    &>div {
+      border-radius: var(--radius-xl);
+    }
+  }
+  .\[\&\>div\]\:first\:\[\&\>div\]\:ml-\[1rem\] {
+    &>div {
+      &:first-child {
+        &>div {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+  .\[\&\>div\]\:first\:\[\&\>div\]\:w-\[calc\(100\%-2rem\)\] {
+    &>div {
+      &:first-child {
+        &>div {
+          width: calc(100% - 2rem);
+        }
+      }
+    }
+  }
+  .\[\&\>div\]\:first\:\[\&\>div\]\:w-full {
+    &>div {
+      &:first-child {
+        &>div {
+          width: 100%;
+        }
+      }
+    }
+  }
   .\[\&\>div\>div\]\:mx-\[1rem\] {
     &>div>div {
       margin-inline: 1rem;
+    }
+  }
+  .\[\&\>div\>div\]\:mr-\[1rem\] {
+    &>div>div {
+      margin-right: 1rem;
     }
   }
   .\[\&\>div\>div\]\:w-\[calc\(100\%-2rem\)\] {
@@ -971,6 +1021,11 @@
       font-weight: var(--font-weight-bold);
     }
   }
+  .\[\&\>li\]\:block {
+    &>li {
+      display: block;
+    }
+  }
   .\[\&\>li\]\:inline-block {
     &>li {
       display: inline-block;
@@ -984,6 +1039,11 @@
   .\[\&\>li\]\:w-\[20rem\] {
     &>li {
       width: 20rem;
+    }
+  }
+  .\[\&\>li\]\:snap-center {
+    &>li {
+      scroll-snap-align: center;
     }
   }
   .\[\&\>li\]\:overflow-hidden {
@@ -1058,6 +1118,22 @@
       padding-block: 0.75rem;
     }
   }
+  .\[\&\>li\>div\]\:h-\[15rem\] {
+    &>li>div {
+      height: 15rem;
+    }
+  }
+  .\[\&\>li\>div\]\:w-\[20rem\] {
+    &>li>div {
+      width: 20rem;
+    }
+  }
+  .\[\&\>li\>div\]\:rounded-t-xl {
+    &>li>div {
+      border-top-left-radius: var(--radius-xl);
+      border-top-right-radius: var(--radius-xl);
+    }
+  }
   .\[\&\>li\>span\]\:block {
     &>li>span {
       display: block;
@@ -1072,6 +1148,14 @@
     &>li>span>p {
       --tw-font-weight: var(--font-weight-medium);
       font-weight: var(--font-weight-medium);
+    }
+  }
+  .\[\&\>li\>span\>p\]\:first\:font-medium {
+    &>li>span>p {
+      &:first-child {
+        --tw-font-weight: var(--font-weight-medium);
+        font-weight: var(--font-weight-medium);
+      }
     }
   }
   .\[\&\>small\]\:text-xs {
@@ -1241,6 +1325,11 @@
     }
   }
 }
+@property --tw-scroll-snap-strictness {
+  syntax: "*";
+  inherits: false;
+  initial-value: proximity;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
@@ -1326,6 +1415,7 @@
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
+      --tw-scroll-snap-strictness: proximity;
       --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-shadow: 0 0 #0000;

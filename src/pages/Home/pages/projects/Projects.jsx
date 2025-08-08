@@ -1,5 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import GithubContributions from './components/GithubContributions';
+import ProjectsList from './components/ProjectsList';
 
 export default function Projects(){
     const breakpoint = useOutletContext();
@@ -20,6 +21,9 @@ export default function Projects(){
                         </svg>
                         <p>Projects</p>
                     </span>
+                    <div className="w-full">
+                        <ProjectsList />
+                    </div>
                 </div>
             </div>
             <div>
