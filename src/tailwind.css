@@ -255,9 +255,6 @@
   .mx-\[1rem\] {
     margin-inline: 1rem;
   }
-  .mt-\[1rem\] {
-    margin-top: 1rem;
-  }
   .mt-auto {
     margin-top: auto;
   }
@@ -314,9 +311,6 @@
   .h-\[6rem\] {
     height: 6rem;
   }
-  .h-\[15rem\] {
-    height: 15rem;
-  }
   .h-\[16px\] {
     height: 16px;
   }
@@ -368,9 +362,6 @@
   .w-\[6rem\] {
     width: 6rem;
   }
-  .w-\[20rem\] {
-    width: 20rem;
-  }
   .w-\[22rem\] {
     width: 22rem;
   }
@@ -389,17 +380,11 @@
   .w-\[100\%\] {
     width: 100%;
   }
-  .w-\[300px\] {
-    width: 300px;
-  }
   .w-\[844px\] {
     width: 844px;
   }
   .w-\[935px\] {
     width: 935px;
-  }
-  .w-\[calc\(100\%-1rem\)\] {
-    width: calc(100% - 1rem);
   }
   .w-\[calc\(100\%-2rem\)\] {
     width: calc(100% - 2rem);
@@ -531,6 +516,10 @@
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
+  }
+  .border-\[3px\] {
+    border-style: var(--tw-border-style);
+    border-width: 3px;
   }
   .border-x {
     border-inline-style: var(--tw-border-style);
@@ -1026,11 +1015,6 @@
       display: block;
     }
   }
-  .\[\&\>li\]\:inline-block {
-    &>li {
-      display: inline-block;
-    }
-  }
   .\[\&\>li\]\:h-full {
     &>li {
       height: 100%;
@@ -1044,11 +1028,6 @@
   .\[\&\>li\]\:snap-center {
     &>li {
       scroll-snap-align: center;
-    }
-  }
-  .\[\&\>li\]\:overflow-hidden {
-    &>li {
-      overflow: hidden;
     }
   }
   .\[\&\>li\]\:rounded-lg {
@@ -1134,6 +1113,22 @@
       border-top-right-radius: var(--radius-xl);
     }
   }
+  .\[\&\>li\>img\]\:h-\[15rem\] {
+    &>li>img {
+      height: 15rem;
+    }
+  }
+  .\[\&\>li\>img\]\:w-\[20rem\] {
+    &>li>img {
+      width: 20rem;
+    }
+  }
+  .\[\&\>li\>img\]\:rounded-t-xl {
+    &>li>img {
+      border-top-left-radius: var(--radius-xl);
+      border-top-right-radius: var(--radius-xl);
+    }
+  }
   .\[\&\>li\>span\]\:block {
     &>li>span {
       display: block;
@@ -1142,12 +1137,6 @@
   .\[\&\>li\>span\]\:p-\[0\.5rem\] {
     &>li>span {
       padding: 0.5rem;
-    }
-  }
-  .\[\&\>li\>span\>p\]\:font-medium {
-    &>li>span>p {
-      --tw-font-weight: var(--font-weight-medium);
-      font-weight: var(--font-weight-medium);
     }
   }
   .\[\&\>li\>span\>p\]\:first\:font-medium {

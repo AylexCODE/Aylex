@@ -22,7 +22,7 @@ export default function Projects(){
                         <p>Projects</p>
                     </span>
                     <div className="w-full">
-                        <ProjectsList />
+                        <ProjectsList project={function(){}} />
                     </div>
                 </div>
             </div>

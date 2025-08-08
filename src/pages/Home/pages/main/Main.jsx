@@ -5,11 +5,13 @@ import OverallStats from "./components/OverallStats";
 import Featured from "./components/Featured";
 import TechStack from './components/TechStack';
 import Socials from "./components/Socials";
+import ProjectsList from "../projects/components/ProjectsList";
 
 export default function Main(){
     const [dateTime, setDateTime] = useState(moment(new Date()).format("ddd, MMMM Do YYYY, hh:mm:ss A"));
     const [date, setDate] = useState(moment(new Date()).format("DD"));
     const [techStack, setTechStack] = useState(0);
+    const [projects, setProjects] = useState(0);
 
     useEffect(() => {
         const d = setInterval(() => {
@@ -42,7 +44,7 @@ export default function Main(){
                         <svg width="22px" height="22px" viewBox="0 0 22 22"><path fill="#000000" fill-opacity="1.0" stroke="#000000" stroke-width="1.0" stroke-opacity="0.0" stroke-miterlimit="10" d="M3.16,17.0C3.82,14.32,4.37,12.14,4.79,10.46C4.89,10.07,5.14,10.13,5.35,10.3C6.35,11.09,8.51,12.81,8.51,12.81C8.51,12.81,11.27,6.16,11.69,5.16C11.76,4.99,11.86,4.93,11.99,5.1C12.63,5.91,15.13,9.07,15.13,9.07C15.13,9.07,18.98,3.11,19.51,2.23C20.21,1.08,15.57,12.84,15.57,12.84C15.57,12.84,12.3,8.84,12.3,8.84C12.3,8.84,10.16,13.95,9.48,15.47C9.37,15.71,9.12,15.66,8.99,15.56C8.21,15.0,6.05,13.49,6.05,13.49C6.05,13.49,5.59,15.37,5.09,17.4C4.73,18.86,2.8,18.49,3.16,17.0Z" stroke-linecap="round"/><path fill="#000000" fill-opacity="1.0" stroke="#000000" stroke-width="2.0" stroke-opacity="0.0" stroke-miterlimit="10" d="M0.04,20.85C0.04,20.85,0.04,2.0,0.04,0.94C0.05,-0.3,1.95,-0.28,1.95,1.03C1.95,2.27,2.05,18.66,2.05,19.42C2.05,19.92,2.1,19.95,2.66,19.95C3.89,19.94,19.37,19.93,21.01,19.92C22.28,19.92,22.25,21.82,21.01,21.83C19.31,21.84,1.54,21.96,0.99,21.94C0.5,21.93,0.05,21.55,0.04,20.85Z" stroke-linecap="round"/></svg>
                         <p className="font-bold text-[1.35rem] text-nowrap">Overall Stats</p>
                     </span>
-                    <OverallStats bp={breakpoint} techies={techStack} />
+                    <OverallStats bp={breakpoint} techies={techStack} project={projects} />
                 </div>
                 <div>
                     <span>
@@ -72,6 +74,7 @@ export default function Main(){
                     </div>
                 </div>
             </div>
+            <span className="hidden"><ProjectsList project={setProjects} /></span>
         </div>
     )
 }
