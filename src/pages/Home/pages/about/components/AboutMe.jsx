@@ -10,6 +10,7 @@ export default function AboutMe(){
     
     useEffect(() => {
         setSpanHeight(text.current.scrollHeight +"px");
+        setDate(moment(new Date()).format("MMMM DD, YYYY"));
     }, []);
     
     function handleSeeMore(){

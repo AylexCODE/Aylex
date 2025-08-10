@@ -37,6 +37,7 @@ export default function Typewriter(props){
         }, delay);
         
         return () => clearTimeout(d);
+        // eslint-disable-next-line
     }, [currentText, typingState, currentIndex]);
     return (
         <span>
