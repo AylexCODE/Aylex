@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import Typewriter from "../../../components/Typewriter";
 
 export default function AboutMe(){
-    const [date, setDate] = useState(moment(new Date()).format("MMMM DD, YYYY"));
+    const [date, setDate] = useState(new Date().getFullYear());
     const [isMore, setIsMore] = useState(false);
     const [spanHeight, setSpanHeight] = useState();
     const text = useRef();
