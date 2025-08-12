@@ -378,6 +378,9 @@
   .h-\[160px\] {
     height: 160px;
   }
+  .h-\[310px\] {
+    height: 310px;
+  }
   .h-\[calc\(80px\+3\.5rem\)\] {
     height: calc(80px + 3.5rem);
   }

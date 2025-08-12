@@ -127,6 +127,8 @@ export default function GithubContributions(){
             longestStreak = streak;
             lastLongestStreak = lastMonth;
             possibleFirstLongestStreak.push(lastLongestStreak);
+        }else{
+            possibleFirstLongestStreak.push(lastMonth);
         }
         
         setContributions(months);
@@ -207,9 +209,9 @@ export default function GithubContributions(){
             </div>
         </div>
         ) : (
-        <>
+        <div className="h-[310px]">
             <p>Getting data...</p>
-        </>
+        </div>
         )}
         </div>
     )
