@@ -1,2 +1,2 @@
-# Aylex-Page
-> Portfolio Website
+# A Portfolio Project
+> One Page Portfolio Website
