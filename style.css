@@ -53,6 +53,7 @@ header {
     background-color: #123456;
     position: relative;
     bottom: 48px;
+    object-fit: cover;
 }
 
 .title {
@@ -127,7 +128,8 @@ li {
 .project-thumbnail {
     height: 240px;
     width: 320px;
-    border-radius: 16px;
+    border-radius: 16px 16px 0px 0px;
+    object-fit: cover;
 }
 
 .project-description {
