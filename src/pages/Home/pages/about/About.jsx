@@ -19,9 +19,9 @@ export default function About(){
                         </motion.span>
                     </>) : null}
                 </AnimatePresence>
-                <span className={`flex flex-col ${breakpoint >= 768 ? "m-[1.2rem] mb-[0rem] w-[calc(100%-2.4rem)] rounded-xl overflow-hidden" : "w-full shadow-[0px_0px_10px_var(--color-componentsShadow)]"}`}>
-                    <span className={`block w-full ${breakpoint >= 992 ? "aspect-[4/1]" : breakpoint >= 768 ? "aspect-[3.3/1]" : "aspect-[2.85/1]"} bg-[#123456]`}></span>
-                    <span className="block flex flex-row gap-[0.5rem] bg-componentsColor p-[1rem]">
+                <span className={`flex flex-col ${breakpoint >= 768 ? "m-[1.2rem] mb-[0rem] w-[calc(100%-2.4rem)] rounded-xl border border-borderColor" : "w-full shadow-[0px_0px_10px_var(--color-componentsShadow)]"}`}>
+                    <span className={`block w-full ${breakpoint >= 992 ? "aspect-[4/1] rounded-t-xl" : breakpoint >= 768 ? "aspect-[3.3/1] rounded-t-xl" : "aspect-[2.85/1]"} bg-[#123456]`}></span>
+                    <span className="flex flex-row gap-[0.5rem] bg-componentsColor p-[1rem] rounded-b-xl">
                         <div className="relative bottom-[3rem] p-[0.25rem] rounded-max bg-componentsColor">
                             <img src="%PUBLIC_URL%/../favicon.svg" alt="logo" className="rounded-max h-[6.5rem] w-[6.5rem]"></img>
                         </div>
