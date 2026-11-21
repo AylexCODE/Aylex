@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { GoogleGenAI } from "@google/genai";
 import ReactMarkdown from 'react-markdown';
 
 import BurgerMenu from "../../../Home/components/menu/BurgerMenu.jsx";
@@ -41,22 +40,21 @@ export default function GoogleStudio(){
         // const ai = await googleGenAI(model, "Explain how AI works in a few words");
         // updateConvo(convo => [...convo, {'ai': ai}]);
         // console.log(convo, ai);  
-        const ai = new GoogleGenAI({ apiKey: process.env.REACT_APP_GOOGLE_AI_API_KEY});
-        const response = await ai.models.generateContentStream({
-            model: model, //"gemini-2.5-flash",
-            contents: prompt,
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/gemini`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ model, prompt }),
         });
-        for await(const chunk of response){
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder();
+        while(true){
+            const { done, value } = await reader.read();
+            if(done) break;
+            const text = decoder.decode(value, { stream: true });
             updateConvo(convo => {
                 const lastConvo = convo.length - 1;
                 const lastObject = convo[lastConvo];
-                
-                const updatedLastConvo = {
-                    ...lastObject,
-                    response: `${lastObject.response}${chunk.text}` 
-                };
-                
-                return [...convo.slice(0, lastConvo), updatedLastConvo];
+                return [...convo.slice(0, lastConvo), { ...lastObject, response: `${lastObject.response}${text}` }];
             });
         }
         

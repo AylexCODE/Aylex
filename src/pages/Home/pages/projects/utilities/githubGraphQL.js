@@ -2,54 +2,8 @@ import axios from 'axios';
 
 export default class GithubGraphQL {
     async getContributions(){
-        const options = {
-            method: "POST",
-            url: "https://api.github.com/graphql",
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' +process.env.REACT_APP_GITHUBGRAPHQL_TOKEN
-            },
-            data: {
-                variables: {
-                    'username': 'AylexCODE'
-                },
-                query: `
-                    query($username:String!) {
-                        user(login:$username){
-                            contributionsCollection {
-                              contributionCalendar {
-                                totalContributions
-                                colors
-                                months {
-                                  name
-                                }
-                                weeks {
-                                  contributionDays {
-                                    contributionCount
-                                    contributionLevel
-                                    color
-                                    date
-                                    weekday
-                                  }
-                                }
-                              }
-                            }
-                        }
-                        rateLimit {
-                            limit
-                            remaining
-                            used
-                            resetAt
-                            cost
-                        }
-                    }
-                `
-            }
-        }
-        
         try{
-            const response = (await axios(options)).data.data;
-            console.info(response.rateLimit);
+            const response = (await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/github/contributions`)).data;
             const contribution = {
                 years: [],
                 data: {},
