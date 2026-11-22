@@ -20,6 +20,8 @@
     --color-componentsShadow: rgba(0, 0, 0, 0.2);
     --color-iconTextColor: #abe9cd;
     --color-textColor: #000;
+    --color-textColorPrivate: #660000;
+    --color-textColorPublic: #006400;
     --color-navBg: rgba(255, 255, 255, 0.1);
     --color-navShadowColor: rgba(0, 0, 0, 0.05);
     --color-sideBarCover: rgba(0, 0, 0, 0.4);
@@ -27,6 +29,20 @@
     --color-borderColor: #D9D9D9;
     --color-activeBtnColor: #ffd416;
     --color-activeBtnShadowColor: rgba(255, 212, 22, 0.1);
+}
+
+:root[data-theme="dark"] {
+    color-scheme: dark;
+    --color-bgColor: #121214;
+    --color-componentsColor: #1B1B1F;
+    --color-componentsColorClear: #26262C;
+    --color-componentsShadow: rgba(0, 0, 0, 0.6);
+    --color-textColor: #EDEDED;
+    --color-textColorPrivate: #FF7B7B;
+    --color-textColorPublic: #4ADE80;
+    --color-navShadowColor: rgba(0, 0, 0, 0.3);
+    --color-borderColor: #34343B;
+    --color-sideTextColorActive: #7DB2F0;
 }
 
 @utility scrollbar-hidden {
@@ -93,5 +109,14 @@
 
     30% {
         transform: translateY(-5px);
+    }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html.theme-transition *:not(.theme-toggle):not(.theme-toggle *),
+    html.theme-transition *:not(.theme-toggle):not(.theme-toggle *)::before,
+    html.theme-transition *:not(.theme-toggle):not(.theme-toggle *)::after {
+        transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease,
+                    fill 0.3s ease, stroke 0.3s ease, box-shadow 0.3s ease !important;
     }
 }

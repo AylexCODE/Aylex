@@ -36,7 +36,7 @@ export default function TechStack(props){
     </>);
     
     return (
-        <div className="w-[100%] h-[calc(80px+3.5rem)] overflow-hidden">
+        <div className="w-[100%] h-[calc(80px+3.5rem)] overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
             <span ref={iconsWrapper} className="w-full p-[1rem] flex flex-row gap-[2.5rem] [&>span]:flex [&>span]:flex-row [&>span]:gap-[2.5rem]">
                 <motion.span ref={iconsDisplay} animate={{ x: applyAnimate ? -applyAnimate : 0 }} transition={{ duration: applyAnimate ? applyAnimate/30 : 0, repeat: Infinity, ease: "linear" }}>{icons}</motion.span>
                 {applyAnimate ? (
@@ -49,7 +49,6 @@ export default function TechStack(props){
                     <motion.span animate={{ x: -applyAnimate2 }} transition={{ duration: applyAnimate2/30, repeat: Infinity, ease: "linear" }}>{icons2}</motion.span>
                 ) : ( null )}
             </span>
-            <span className="w-full h-[calc(80px+3.5rem)] block relative bottom-[calc(80px+3.5rem)] inset-shadow-[10px_0px_10px_var(--color-componentsColor),_-10px_0px_10px_var(--color-componentsColor)] z-5"></span>
         </div>
     )
 }

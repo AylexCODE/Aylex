@@ -1,23 +1,23 @@
-/* From Uiverse.io by Yaya12085 */ 
+/* From Uiverse.io by Yaya12085 */
 .loader {
     height: 20px;
     width: 20px;
     border-radius: 50%;
-    background-color: var(--fontColor);
+    background-color: var(--color-textColor);
     animation: 1.5s pulse infinite ease-in-out;
-  }
-  
-  @keyframes pulse {
-    0% {
-      box-shadow: 0 0 0 0 var(--fontColor);
-    }
-  
-    100% {
-      box-shadow: 0 0 0 14px #00000000;
-    }
-  }
+}
 
-  .loaderWrapper {
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--color-textColor);
+    }
+
+    100% {
+        box-shadow: 0 0 0 14px #00000000;
+    }
+}
+
+.loaderWrapper {
     position: fixed;
     top: 0;
     left: 0;
@@ -27,5 +27,5 @@
     height: 100dvh;
     width: 100dvw;
     z-index: 999;
-    background-color: var(--background);
-  }
+    background-color: var(--color-bgColor);
+}

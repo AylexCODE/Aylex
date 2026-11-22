@@ -125,7 +125,7 @@ export default function GithubContributions(){
         </div>
         ) : (
         <div className="h-[160px] grid place-items-center">
-            <span className="flex animate-ping rounded-max size-[1rem] bg-[#000]"></span>
+            <span className="flex animate-ping rounded-max size-[1rem] bg-textColor"></span>
         </div>
         )}
         </div>

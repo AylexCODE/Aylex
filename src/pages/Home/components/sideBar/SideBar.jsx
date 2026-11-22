@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle";
 
 export default function SideBar(props){
     return (
@@ -6,7 +7,7 @@ export default function SideBar(props){
             <div className="flex flex-col gap-[1.25rem] p-[1.25rem]">
                 <img src="%PUBLIC_URL%/../favicon.svg" alt="logo" className="w-[6rem] h-[6rem] rounded-max bg-bgColorClear"></img>
                     <div className="flex flex-col gap-[0.25rem] text-textColor">
-                    <h1 className="text-lg font-bold text-ellipsis text-nowrap whitespace-nowrap overflow-x-hidden">Alexander I. Jala</h1>
+                    <h1 className="text-lg font-bold text-ellipsis text-nowrap whitespace-nowrap overflow-x-hidden">Lexus</h1>
                     <p className="text-sm text-ellipsis text-nowrap whitespace-nowrap overflow-x-hidden">Trainee Developer</p>
                 </div>
             </div>
@@ -37,10 +38,7 @@ export default function SideBar(props){
                     </NavLink>
                 </li>
             </ul>
-            <div className="flex justify-between mt-auto mx-[1rem] mb-[1rem] rounded-lg p-[0.75rem] bg-componentsColorClear">
-                <p>Testing</p>
-                <input type="checkbox" />
-            </div>
+            <ThemeToggle />
             <div className="flex flex-col gap-[0.15rem] pt-[0px] pb-[1.25rem] px-[1.25rem] opacity-60 [&>small]:text-xs">
                 <small className="text-ellipsis text-nowrap whitespace-nowrap overflow-x-hidden">Built With ReactJS & Tailwind CSS</small>
                 <small className="text-ellipsis text-nowrap whitespace-nowrap overflow-x-hidden">&#169; 2025 AylexCODE, All Rights Reserved.</small>

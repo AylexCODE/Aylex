@@ -98,7 +98,7 @@ export default function GameScreen(props){
     return (
         <section ref={gameContainer} className="w-full h-fit flex flex-col items-center">
             <button onClick={() => {props.setIsInMenu(true);}} className="absolute right-[1rem] top-[1rem]">
-                <svg width="16px" height="16px" viewBox="0 0 16 16"><path fill="#FFFFFF" fill-opacity="0.0" stroke="#000000" stroke-width="2.0" stroke-opacity="1.0" stroke-miterlimit="10" d="M1.03,1.02C1.03,1.02,14.98,14.97,14.98,14.97C14.98,14.97,14.98,14.97,14.98,14.97Z" stroke-linecap="round"/><path fill="#FFFFFF" fill-opacity="0.0" stroke="#000000" stroke-width="2.0" stroke-opacity="1.0" stroke-miterlimit="10" d="M1.03,14.97C1.03,14.97,14.98,1.02,14.98,1.02C14.98,1.02,14.98,1.02,14.98,1.02Z" stroke-linecap="round"/></svg>
+                <svg width="16px" height="16px" viewBox="0 0 16 16" fill="none" strokeWidth="2" strokeLinecap="round" strokeMiterlimit="10" className="stroke-textColor"><path d="M1.03,1.02L14.98,14.97" /><path d="M1.03,14.97L14.98,1.02" /></svg>
             </button>
             <Boxes difficulty={props.difficulty} setGuessBox={setGuessBox} />
             {isBoxHidden ? ( <div ref={box} className="hidden"></div> ) : ( <div ref={box} className="grid place-items-center absolute top-[2px] left-[2px] size-[50px] border bg-[#FFD700] z-2"><h2 className="text-[1.5rem] font-bold">{currentNumber}</h2></div> )}
