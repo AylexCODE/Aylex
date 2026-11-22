@@ -10,6 +10,7 @@
 
 @theme {
     --radius-max: 100%;
+    --radius-pill: 9999px;
     --font-textFont: "Space Grotesk", "Poppins", sans-serif;
     --font-oswald: "Oswald", "Poppins", sans-serif;
     --font-poppins: "Poppins", sans-serif;
@@ -31,6 +32,14 @@
     --color-activeBtnShadowColor: rgba(255, 212, 22, 0.1);
 }
 
+:root {
+    --gh-0: #ebedf0;
+    --gh-1: #9be9a8;
+    --gh-2: #40c463;
+    --gh-3: #30a14e;
+    --gh-4: #216e39;
+}
+
 :root[data-theme="dark"] {
     color-scheme: dark;
     --color-bgColor: #121214;
@@ -43,6 +52,12 @@
     --color-navShadowColor: rgba(0, 0, 0, 0.3);
     --color-borderColor: #34343B;
     --color-sideTextColorActive: #7DB2F0;
+
+    --gh-0: #2a2a31;
+    --gh-1: #0e4429;
+    --gh-2: #006d32;
+    --gh-3: #26a641;
+    --gh-4: #39d353;
 }
 
 @utility scrollbar-hidden {

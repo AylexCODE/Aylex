@@ -1,6 +1,19 @@
 import GithubGraphQL from '../utilities/githubGraphQL.js';
 import { useState, useEffect } from 'react';
 
+const LEVELS = { NONE: 0, FIRST_QUARTILE: 1, SECOND_QUARTILE: 2, THIRD_QUARTILE: 3, FOURTH_QUARTILE: 4 };
+
+function padYear(days, year){
+    const byDate = new Map(days.map(d => [d.date, d]));
+    const out = [];
+    const y = Number(year);
+    for(const d = new Date(Date.UTC(y, 0, 1)); d.getUTCFullYear() === y; d.setUTCDate(d.getUTCDate() + 1)){
+        const date = d.toISOString().slice(0, 10);
+        out.push(byDate.get(date) ?? { date, weekday: d.getUTCDay(), contributionCount: 0, contributionLevel: "NONE", empty: true });
+    }
+    return out;
+}
+
 export default function GithubContributions(){
     const [data, setData] = useState();
     const [contributions, setContributions] = useState();
@@ -55,7 +68,7 @@ export default function GithubContributions(){
         if(index === "Last Year"){
             data = calculateLastYear(data);
         }else{
-            data = data.data['y'+index];
+            data = padYear(data.data['y'+index], index);
         }
         
         let currentMonth = null, currentWeek = 0, monthForLatest = 0, firstMonth;
@@ -95,7 +108,9 @@ export default function GithubContributions(){
                             {months.map((week) => (
                                 <ul key={'d'+week[0].date}>{
                                 week.map(day => (
-                                    <li key={day.date} title={`${day.contributionCount} contributions in ${day.date}`} datalevel={day.contributionLevel} style={{backgroundColor: day.color}}></li>
+                                    day.empty
+                                        ? <li key={day.date} className="invisible"></li>
+                                        : <li key={day.date} title={`${day.contributionCount} contributions in ${day.date}`} data-level={day.contributionLevel} style={{backgroundColor: `var(--gh-${LEVELS[day.contributionLevel] ?? 0})`}}></li>
                                 ))}</ul>
                             ))}
                             </span>
@@ -115,8 +130,8 @@ export default function GithubContributions(){
                     </span>
                     <span className="flex flex-row justify-between items-center gap-[8px]">
                         <p>Less</p>
-                        <ul>{data.colors.map((color) => (
-                            <li key={color} style={{backgroundColor: color}}></li>
+                        <ul>{data.colors.map((color, i) => (
+                            <li key={color} style={{backgroundColor: `var(--gh-${i})`}}></li>
                         ))}</ul>
                         <p>More</p>
                     </span>

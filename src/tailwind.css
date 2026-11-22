@@ -43,6 +43,7 @@
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
     --radius-max: 100%;
+    --radius-pill: 9999px;
     --font-textFont: "Space Grotesk", "Poppins", sans-serif;
     --font-oswald: "Oswald", "Poppins", sans-serif;
     --color-bgColor: #F2F1F6;
@@ -916,6 +917,9 @@
   }
   .rounded-md {
     border-radius: var(--radius-md);
+  }
+  .rounded-pill {
+    border-radius: var(--radius-pill);
   }
   .rounded-xl {
     border-radius: var(--radius-xl);
@@ -3104,6 +3108,13 @@
   font-display: swap;
   src: url("./components/fonts/Clash_Regular.otf");
 }
+:root {
+  --gh-0: #ebedf0;
+  --gh-1: #9be9a8;
+  --gh-2: #40c463;
+  --gh-3: #30a14e;
+  --gh-4: #216e39;
+}
 :root[data-theme="dark"] {
   color-scheme: dark;
   --color-bgColor: #121214;
@@ -3116,6 +3127,11 @@
   --color-navShadowColor: rgba(0, 0, 0, 0.3);
   --color-borderColor: #34343B;
   --color-sideTextColorActive: #7DB2F0;
+  --gh-0: #2a2a31;
+  --gh-1: #0e4429;
+  --gh-2: #006d32;
+  --gh-3: #26a641;
+  --gh-4: #39d353;
 }
 @layer base {
   ::-webkit-scrollbar {
