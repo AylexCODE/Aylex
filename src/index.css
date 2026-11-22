@@ -71,6 +71,38 @@
     color: #434037;
 }
 
+@layer base {
+    ::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+    }
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: color-mix(in srgb, var(--color-textColor) 28%, transparent);
+        border-radius: 0;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--color-sideTextColorActive);
+    }
+    ::-webkit-scrollbar-button {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+    ::-webkit-scrollbar-corner {
+        background: transparent;
+    }
+
+    /* Firefox: thumb shape can't be changed there */
+    @supports (-moz-appearance: none) {
+        * {
+            scrollbar-color: color-mix(in srgb, var(--color-textColor) 28%, transparent) transparent;
+        }
+    }
+}
+
 /* ::-webkit-scrollbar {
     display: none;
 } */
