@@ -108,9 +108,7 @@ export default function GithubContributions(){
                             {months.map((week) => (
                                 <ul key={'d'+week[0].date}>{
                                 week.map(day => (
-                                    day.empty
-                                        ? <li key={day.date} className="invisible"></li>
-                                        : <li key={day.date} title={`${day.contributionCount} contributions in ${day.date}`} data-level={day.contributionLevel} style={{backgroundColor: `var(--gh-${LEVELS[day.contributionLevel] ?? 0})`}}></li>
+                                    <li key={day.date} title={day.empty ? undefined : `${day.contributionCount} contributions in ${day.date}`} data-level={day.contributionLevel} style={{backgroundColor: `var(--gh-${LEVELS[day.contributionLevel] ?? 0})`}}></li>
                                 ))}</ul>
                             ))}
                             </span>
