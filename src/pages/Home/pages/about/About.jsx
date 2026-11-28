@@ -1,12 +1,46 @@
 import { AnimatePresence, motion } from "motion/react";
 import { useOutletContext } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import AboutMe from "./components/AboutMe";
 import Socials from "../main/components/Socials";
 import Certificates from "./components/Certificates";
 
 export default function About(){
     const [isMessageVisible, setIsMessageVisible] = useState(false);
+    const [form, setForm] = useState({ contact: "", message: "", website: "" });
+    const [status, setStatus] = useState("idle");
+    const [error, setError] = useState("");
+
+    useEffect(() => {
+        if(!isMessageVisible) return;
+        const onKey = (e) => { if(e.key === "Escape") setIsMessageVisible(false); };
+        window.addEventListener("keydown", onKey);
+        return () => window.removeEventListener("keydown", onKey);
+    }, [isMessageVisible]);
+
+    function update(field){
+        return (e) => setForm(f => ({ ...f, [field]: e.target.value }));
+    }
+
+    async function sendMessage(e){
+        e.preventDefault();
+        if(status === "sending") return;
+        setStatus("sending");
+        setError("");
+        try{
+            await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/contact`, form);
+            setStatus("sent");
+            setTimeout(() => {
+                setIsMessageVisible(false);
+                setForm({ contact: "", message: "", website: "" });
+                setStatus("idle");
+            }, 1800);
+        }catch(err){
+            setStatus("error");
+            setError(err.response?.data?.error ?? "Could not send. Please try again later.");
+        }
+    }
     const breakpoint = useOutletContext();
     
     return (
@@ -15,9 +49,17 @@ export default function About(){
                 <AnimatePresence initial={false}>
                     {isMessageVisible ? (<>
                         <span className="bg-sideBarCover fixed top-0 left-0 h-dvh w-dvw flex items-center justify-center z-11" onClick={() => setIsMessageVisible(false)}></span>
-                        <motion.span className="size-[10rem] fixed top-[calc(50%-5rem)] left-[calc(50%-5rem)] px-[1rem] py-[0.5rem] border rounded-xl bg-componentsColor z-12" initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0 }} key="messageBox">
-                                <p>Available soon...</p>
-                        </motion.span>
+                        <motion.form onSubmit={sendMessage} className="w-[min(26rem,calc(100vw-2rem))] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-[0.75rem] p-[1rem] border border-borderColor rounded-xl bg-componentsColor z-12" initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0 }} key="messageBox">
+                            <h2 className="font-medium">Send me a message</h2>
+                            <input type="text" maxLength={120} placeholder="How can I reach you? (optional) Email, Discord, etc." value={form.contact} onChange={update("contact")} className="w-full rounded-lg border border-borderColor bg-transparent px-[0.75rem] py-[0.5rem] outline-none focus:border-textColor transition-colors duration-300" />
+                            <textarea required minLength={10} maxLength={2000} rows={5} placeholder="Message" value={form.message} onChange={update("message")} className="w-full rounded-lg border border-borderColor bg-transparent px-[0.75rem] py-[0.5rem] outline-none focus:border-textColor transition-colors duration-300 resize-none"></textarea>
+                            
+                            <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden="true" value={form.website} onChange={update("website")} className="absolute left-[-9999px]" />
+                            <span className="flex flex-row items-center justify-between gap-[0.75rem]">
+                                <p className="text-[0.85rem] opacity-70">{status === "sent" ? "Thanks! Your message was sent." : status === "error" ? error : ""}</p>
+                                <button type="submit" disabled={status === "sending" || status === "sent"} className="shrink-0 border border-borderColor rounded-lg px-[1rem] py-[0.3rem] cursor-pointer disabled:opacity-50 disabled:cursor-default">{status === "sending" ? "Sending..." : "Send"}</button>
+                            </span>
+                        </motion.form>
                     </>) : null}
                 </AnimatePresence>
                 <span className={`flex flex-col ${breakpoint >= 768 ? "m-[1rem] mb-[0rem] w-[calc(100%-2rem)] rounded-xl border border-borderColor" : "w-full shadow-[0px_0px_10px_var(--color-componentsShadow)]"}`}>
